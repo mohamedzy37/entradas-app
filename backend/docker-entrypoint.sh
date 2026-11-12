@@ -1,7 +1,8 @@
 #!/bin/sh
 # Arranque del contenedor de la API:
 #  1. Crea/actualiza el esquema (y carga datos demo si SEED_DEMO_DATA=true).
-#  2. Arranca Uvicorn detras del proxy inverso (Nginx).
+#  2. Arranca Uvicorn detras del proxy inverso (Nginx en Docker Compose o el
+#     balanceador de la plataforma en Render). PORT lo fija la plataforma.
 set -eu
 
 python scripts/init_db.py
@@ -13,7 +14,7 @@ python scripts/init_db.py
 # --no-server-header: no anunciar "uvicorn" en las respuestas.
 exec uvicorn app.main:app \
   --host 0.0.0.0 \
-  --port 3000 \
+  --port "${PORT:-3000}" \
   --proxy-headers \
   --forwarded-allow-ips="*" \
   --no-server-header

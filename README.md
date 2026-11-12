@@ -8,8 +8,10 @@ entradas-app/
 ├── backend/             API REST con FastAPI + PostgreSQL (SQLAlchemy 2) + Dockerfile
 ├── frontend/            SPA con React 19 + TypeScript + Vite + Dockerfile (Nginx)
 │   └── nginx/           proxy inverso HTTPS, cabeceras de seguridad, TLS
+├── docs/                página pública y política de privacidad (GitHub Pages)
 ├── scripts/             utilidades (generar secretos)
-└── docker-compose.yml   despliegue completo
+├── docker-compose.yml   despliegue completo con Docker
+└── render.yaml          despliegue en Render (Blueprint)
 ```
 
 ## Requisitos del enunciado
@@ -83,6 +85,50 @@ docker compose logs -f backend        # logs de la API
 docker compose down                   # parar (conserva los datos)
 docker compose down -v                # parar y BORRAR datos y certificado
 ```
+
+## Despliegue en Render
+
+La aplicación está publicada en **<https://entradas-mohamedzy37.onrender.com>**.
+
+El fichero [`render.yaml`](render.yaml) es un *Blueprint* que crea los tres
+componentes con un solo clic:
+
+| Componente | Tipo en Render | Plan |
+| --- | --- | --- |
+| `entradas-mohamedzy37` | Static Site (React compilado con Vite) | Gratis |
+| `entradas-api-mohamedzy37` | Web Service con el mismo `backend/Dockerfile` | Gratis |
+| `entradas-db` | PostgreSQL gestionado, sin acceso desde Internet (`ipAllowList: []`) | Gratis (30 días) |
+
+```
+Navegador ──HTTPS──▶ entradas-mohamedzy37.onrender.com (Static Site)
+                       ├── /        SPA
+                       └── /api/* ──rewrite──▶ entradas-api-mohamedzy37.onrender.com ──▶ entradas-db
+```
+
+El frontend reenvía `/api/*` a la API con una regla *rewrite*, de modo que el
+navegador solo ve un origen. Es imprescindible para la cookie del refresh
+(`SameSite=Strict`): `onrender.com` está en la *Public Suffix List* y dos
+subdominios distintos serían sitios distintos.
+
+### Pasos
+
+1. En <https://dashboard.render.com> inicia sesión con GitHub.
+2. **New → Blueprint**, elige el repositorio `entradas-app` y la rama `main`.
+3. Render muestra los tres recursos y pide `GOOGLE_CLIENT_ID` y
+   `GOOGLE_CLIENT_SECRET` (los mismos del `.env`). Pulsa **Deploy Blueprint**.
+4. En Google Cloud → Clientes → `entradas-web`, añade la URI de redirección
+   `https://entradas-mohamedzy37.onrender.com/api/auth/google/callback`.
+5. Los secretos JWT los genera Render; la base de datos se inicializa con los
+   datos de demostración al arrancar la API.
+
+### Limitaciones del plan gratuito
+
+- La API se **duerme tras 15 minutos** sin tráfico; la primera petición tarda
+  alrededor de un minuto en despertarla.
+- La base de datos gratuita **caduca a los 30 días** (con 14 días de gracia para
+  pasar a un plan de pago); después se borra.
+- Si Render asigna otra URL porque el nombre ya existe, hay que actualizar en
+  `render.yaml` `CORS_ORIGINS`, `GOOGLE_REDIRECT_URI` y la regla *rewrite*.
 
 ## Login con Google
 

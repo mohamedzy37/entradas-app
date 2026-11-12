@@ -33,6 +33,16 @@ def ensure_database() -> None:
     if not database:
         raise RuntimeError("DATABASE_URL no incluye nombre de base de datos")
 
+    # En plataformas gestionadas (Render, RDS, Cloud SQL...) la base de datos ya
+    # existe y el usuario no suele tener permiso para crear otras: si se puede
+    # conectar directamente, no hay nada que hacer.
+    try:
+        psycopg2.connect(settings.DATABASE_URL.replace("+psycopg2", "")).close()
+        print(f"Base de datos existente: {database}")
+        return
+    except psycopg2.OperationalError:
+        pass
+
     connection = psycopg2.connect(
         host=url.host or "localhost",
         port=url.port or 5432,
