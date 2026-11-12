@@ -1,0 +1,1812 @@
+{
+  "generatedAt": "2026-10-20T12:59:32.668Z",
+  "categories": [
+    {
+      "id": "cat-cine",
+      "name": "Cine",
+      "slug": "cine"
+    },
+    {
+      "id": "cat-conciertos",
+      "name": "Conciertos",
+      "slug": "conciertos"
+    },
+    {
+      "id": "cat-deportes",
+      "name": "Deportes",
+      "slug": "deportes"
+    },
+    {
+      "id": "cat-festivales",
+      "name": "Festivales",
+      "slug": "festivales"
+    },
+    {
+      "id": "cat-museos",
+      "name": "Museos y Exposiciones",
+      "slug": "museos"
+    },
+    {
+      "id": "cat-parques",
+      "name": "Parques y Experiencias",
+      "slug": "parques"
+    },
+    {
+      "id": "cat-rutas",
+      "name": "Rutas y Visitas",
+      "slug": "rutas"
+    },
+    {
+      "id": "cat-teatro",
+      "name": "Teatro y Ópera",
+      "slug": "teatro"
+    }
+  ],
+  "venues": [
+    {
+      "id": "venue-sagrada",
+      "name": "Basílica de la Sagrada Família",
+      "address": "C. de Mallorca, 401",
+      "city": "Barcelona",
+      "country": "ES",
+      "capacity": 9000,
+      "latitude": 41.4036,
+      "longitude": 2.1744
+    },
+    {
+      "id": "venue-cinesa",
+      "name": "Cinesa La Maquinista",
+      "address": "C. del Pont de Barcelona, 10",
+      "city": "Barcelona",
+      "country": "ES",
+      "capacity": 1200,
+      "latitude": 41.4417,
+      "longitude": 2.1985
+    },
+    {
+      "id": "venue-estadi-olimpic",
+      "name": "Estadi Olímpic Lluís Companys",
+      "address": "Passeig Olímpic, 17-19",
+      "city": "Barcelona",
+      "country": "ES",
+      "capacity": 55926,
+      "latitude": 41.3641,
+      "longitude": 2.1558
+    },
+    {
+      "id": "venue-liceu",
+      "name": "Gran Teatre del Liceu",
+      "address": "La Rambla, 51-59",
+      "city": "Barcelona",
+      "country": "ES",
+      "capacity": 2292,
+      "latitude": 41.3807,
+      "longitude": 2.1736
+    },
+    {
+      "id": "venue-kinepolis",
+      "name": "Kinépolis Barcelona",
+      "address": "C. de Salvador Espriu, 5",
+      "city": "Barcelona",
+      "country": "ES",
+      "capacity": 2000,
+      "latitude": 41.3839,
+      "longitude": 2.1873
+    },
+    {
+      "id": "venue-parc-forum",
+      "name": "Parc del Fòrum",
+      "address": "Carrer de la Pau, 12",
+      "city": "Barcelona",
+      "country": "ES",
+      "capacity": 60000,
+      "latitude": 41.4108,
+      "longitude": 2.2222
+    },
+    {
+      "id": "venue-campnou",
+      "name": "Spotify Camp Nou",
+      "address": "C. d'Arístides Maillol, 12",
+      "city": "Barcelona",
+      "country": "ES",
+      "capacity": 99354,
+      "latitude": 41.3809,
+      "longitude": 2.12282
+    },
+    {
+      "id": "venue-fib",
+      "name": "Recinte de Concerts de Benicàssim",
+      "address": "Av. de Ferrandis Salvador, s/n",
+      "city": "Benicàssim",
+      "country": "ES",
+      "capacity": 45000,
+      "latitude": 40.057,
+      "longitude": 0.081
+    },
+    {
+      "id": "venue-san-mames",
+      "name": "Estadio San Mamés",
+      "address": "C. Rafael Moreno Pitxitxi, 2",
+      "city": "Bilbao",
+      "country": "ES",
+      "capacity": 53289,
+      "latitude": 43.2641,
+      "longitude": -2.9493
+    },
+    {
+      "id": "venue-guggenheim",
+      "name": "Museo Guggenheim Bilbao",
+      "address": "Abandoibarra Etorb., 2",
+      "city": "Bilbao",
+      "country": "ES",
+      "capacity": 3000,
+      "latitude": 43.2687,
+      "longitude": -2.934
+    },
+    {
+      "id": "venue-arenal",
+      "name": "Recinto Arenal Sound",
+      "address": "Playa del Arenal",
+      "city": "Burriana",
+      "country": "ES",
+      "capacity": 60000,
+      "latitude": 39.878,
+      "longitude": -0.08
+    },
+    {
+      "id": "venue-alhambra",
+      "name": "La Alhambra y el Generalife",
+      "address": "C. Real de la Alhambra, s/n",
+      "city": "Granada",
+      "country": "ES",
+      "capacity": 6600,
+      "latitude": 37.1761,
+      "longitude": -3.5881
+    },
+    {
+      "id": "venue-bernabeu",
+      "name": "Estadio Santiago Bernabéu",
+      "address": "Av. de Concha Espina, 1",
+      "city": "Madrid",
+      "country": "ES",
+      "capacity": 81044,
+      "latitude": 40.45304,
+      "longitude": -3.68834
+    },
+    {
+      "id": "venue-ifema",
+      "name": "IFEMA Feria de Madrid",
+      "address": "Av. del Partenón, 5",
+      "city": "Madrid",
+      "country": "ES",
+      "capacity": 30000,
+      "latitude": 40.4616,
+      "longitude": -3.6253
+    },
+    {
+      "id": "venue-movistar-arena",
+      "name": "Movistar Arena",
+      "address": "C. del Cardenal Marcelo Spínola, 19",
+      "city": "Madrid",
+      "country": "ES",
+      "capacity": 12000,
+      "latitude": 40.4536,
+      "longitude": -3.6744
+    },
+    {
+      "id": "venue-prado",
+      "name": "Museo Nacional del Prado",
+      "address": "Calle Ruiz de Alarcón, 23",
+      "city": "Madrid",
+      "country": "ES",
+      "capacity": 3000,
+      "latitude": 40.41378,
+      "longitude": -3.69212
+    },
+    {
+      "id": "venue-reina-sofia",
+      "name": "Museo Reina Sofía",
+      "address": "C. de Santa Isabel, 52",
+      "city": "Madrid",
+      "country": "ES",
+      "capacity": 4000,
+      "latitude": 40.4082,
+      "longitude": -3.6946
+    },
+    {
+      "id": "venue-thyssen",
+      "name": "Museo Thyssen-Bornemisza",
+      "address": "Paseo del Prado, 8",
+      "city": "Madrid",
+      "country": "ES",
+      "capacity": 1600,
+      "latitude": 40.4161,
+      "longitude": -3.6949
+    },
+    {
+      "id": "venue-madcool",
+      "name": "Recinto Mad Cool (Iberia)",
+      "address": "C. de la Cañada",
+      "city": "Madrid",
+      "country": "ES",
+      "capacity": 50000,
+      "latitude": 40.3545,
+      "longitude": -3.6902
+    },
+    {
+      "id": "venue-lope-de-vega",
+      "name": "Teatro Lope de Vega",
+      "address": "C. Gran Vía, 57",
+      "city": "Madrid",
+      "country": "ES",
+      "capacity": 1300,
+      "latitude": 40.4225,
+      "longitude": -3.7057
+    },
+    {
+      "id": "venue-wizink",
+      "name": "WiZink Center",
+      "address": "C. de Goya, 10",
+      "city": "Madrid",
+      "country": "ES",
+      "capacity": 15000,
+      "latitude": 40.4231,
+      "longitude": -3.6719
+    },
+    {
+      "id": "venue-cac-malaga",
+      "name": "Centro de Arte Contemporáneo (CAC)",
+      "address": "C. Alemania, s/n",
+      "city": "Málaga",
+      "country": "ES",
+      "capacity": 1200,
+      "latitude": 36.7147,
+      "longitude": -4.4272
+    },
+    {
+      "id": "venue-rosaleda",
+      "name": "Estadio La Rosaleda",
+      "address": "Paseo Martiricos, s/n",
+      "city": "Málaga",
+      "country": "ES",
+      "capacity": 30044,
+      "latitude": 36.7341,
+      "longitude": -4.4266
+    },
+    {
+      "id": "venue-villamarin",
+      "name": "Estadio Benito Villamarín",
+      "address": "Av. de Heliópolis, s/n",
+      "city": "Sevilla",
+      "country": "ES",
+      "capacity": 60721,
+      "latitude": 37.3565,
+      "longitude": -5.9816
+    },
+    {
+      "id": "venue-cartuja",
+      "name": "Estadio La Cartuja",
+      "address": "Isla de la Cartuja, s/n",
+      "city": "Sevilla",
+      "country": "ES",
+      "capacity": 57619,
+      "latitude": 37.4145,
+      "longitude": -6.0046
+    },
+    {
+      "id": "venue-alcazar",
+      "name": "Real Alcázar de Sevilla",
+      "address": "Patio de Banderas, s/n",
+      "city": "Sevilla",
+      "country": "ES",
+      "capacity": 1500,
+      "latitude": 37.3831,
+      "longitude": -5.9903
+    },
+    {
+      "id": "venue-mestalla",
+      "name": "Estadio de Mestalla",
+      "address": "Av. de Suecia, 2",
+      "city": "Valencia",
+      "country": "ES",
+      "capacity": 49430,
+      "latitude": 39.4745,
+      "longitude": -0.3582
+    },
+    {
+      "id": "venue-oceanografic",
+      "name": "Oceanogràfic de València",
+      "address": "Carrer d'Eduardo Primo Yúfera, 1B",
+      "city": "Valencia",
+      "country": "ES",
+      "capacity": 8000,
+      "latitude": 39.4534,
+      "longitude": -0.3492
+    },
+    {
+      "id": "venue-pilar",
+      "name": "Basílica del Pilar",
+      "address": "Pl. del Pilar, s/n",
+      "city": "Zaragoza",
+      "country": "ES",
+      "capacity": 2500,
+      "latitude": 41.6567,
+      "longitude": -0.8786
+    }
+  ],
+  "events": [
+    {
+      "id": "evt-past",
+      "title": "Evento pasado (ayer)",
+      "slug": "evento-pasado-ayer",
+      "description": "Evento de ayer. No aparece por defecto (no includePast) pero sí con includePast=true.",
+      "type": "MUSEUM",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/past/1200/675",
+      "startOffsetDays": -6,
+      "endOffsetDays": -6,
+      "doorsOpenOffsetDays": null,
+      "minPriceCents": 1100,
+      "categoryId": "cat-museos",
+      "venueId": "venue-prado",
+      "ticketTypes": [
+        {
+          "id": "tt-past-general",
+          "name": "Entrada general",
+          "description": null,
+          "priceCents": 1100,
+          "currency": "EUR",
+          "quantityTotal": 200,
+          "maxPerOrder": 4,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-sagrada",
+      "title": "Sagrada Família: Visita con torre",
+      "slug": "sagrada-familia-visita-con-torre",
+      "description": "Entrada con acceso a una de las torres y audioguía oficial.",
+      "type": "OTHER",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/sagrada/1200/675",
+      "startOffsetDays": -3,
+      "endOffsetDays": -3,
+      "doorsOpenOffsetDays": null,
+      "minPriceCents": 2900,
+      "categoryId": "cat-rutas",
+      "venueId": "venue-sagrada",
+      "ticketTypes": [
+        {
+          "id": "tt-sagrada-audioguia",
+          "name": "Entrada + audioguía",
+          "description": null,
+          "priceCents": 2900,
+          "currency": "EUR",
+          "quantityTotal": 2000,
+          "maxPerOrder": 6,
+          "isActive": true
+        },
+        {
+          "id": "tt-sagrada-general",
+          "name": "Entrada con torre",
+          "description": null,
+          "priceCents": 3600,
+          "currency": "EUR",
+          "quantityTotal": 3000,
+          "maxPerOrder": 6,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-dune",
+      "title": "Estreno: Dune: Part Three (IMAX)",
+      "slug": "dune-parte-tres-imax",
+      "description": "Preestreno anticipado en formato IMAX Laser con sesión exclusiva para fans.",
+      "type": "CINEMA",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/dune/1200/675",
+      "startOffsetDays": -2,
+      "endOffsetDays": -2,
+      "doorsOpenOffsetDays": -2,
+      "minPriceCents": 1190,
+      "categoryId": "cat-cine",
+      "venueId": "venue-cinesa",
+      "ticketTypes": [
+        {
+          "id": "tt-dune-imax",
+          "name": "Entrada IMAX",
+          "description": null,
+          "priceCents": 1190,
+          "currency": "EUR",
+          "quantityTotal": 800,
+          "maxPerOrder": 6,
+          "isActive": true
+        },
+        {
+          "id": "tt-dune-doble",
+          "name": "Maratón doble (Partes I y II + estreno)",
+          "description": null,
+          "priceCents": 1990,
+          "currency": "EUR",
+          "quantityTotal": 200,
+          "maxPerOrder": 4,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-vangogh",
+      "title": "Van Gogh: The Immersive Experience",
+      "slug": "van-gogh-immersive-experience",
+      "description": "Exposición inmersiva 360° que recrea las obras de Vincent van Gogh a gran escala.",
+      "type": "MUSEUM",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/vangogh/1200/675",
+      "startOffsetDays": -1,
+      "endOffsetDays": -1,
+      "doorsOpenOffsetDays": null,
+      "minPriceCents": 1800,
+      "categoryId": "cat-museos",
+      "venueId": "venue-ifema",
+      "ticketTypes": [
+        {
+          "id": "tt-vangogh-general",
+          "name": "Entrada general",
+          "description": null,
+          "priceCents": 1800,
+          "currency": "EUR",
+          "quantityTotal": 20000,
+          "maxPerOrder": 10,
+          "isActive": true
+        },
+        {
+          "id": "tt-vangogh-familiar",
+          "name": "Familiar (2 adultos + 2 niños)",
+          "description": null,
+          "priceCents": 5200,
+          "currency": "EUR",
+          "quantityTotal": 3000,
+          "maxPerOrder": 2,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-oceanografic",
+      "title": "Oceanogràfic de València: Entrada de día",
+      "slug": "oceanografic-valencia",
+      "description": "El mayor acuario de Europa: más de 500 especies en 9 torres que representan ecosistemas marinos.",
+      "type": "OTHER",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/oceanografic/1200/675",
+      "startOffsetDays": -1,
+      "endOffsetDays": -1,
+      "doorsOpenOffsetDays": null,
+      "minPriceCents": 2600,
+      "categoryId": "cat-parques",
+      "venueId": "venue-oceanografic",
+      "ticketTypes": [
+        {
+          "id": "tt-oceano-infantil",
+          "name": "Entrada infantil (4-12)",
+          "description": null,
+          "priceCents": 2600,
+          "currency": "EUR",
+          "quantityTotal": 4000,
+          "maxPerOrder": 10,
+          "isActive": true
+        },
+        {
+          "id": "tt-oceano-adulto",
+          "name": "Entrada adulto",
+          "description": null,
+          "priceCents": 3500,
+          "currency": "EUR",
+          "quantityTotal": 6000,
+          "maxPerOrder": 10,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-terror",
+      "title": "Ciclo: Clásicos del Cine de Terror",
+      "slug": "ciclo-clasicos-terror",
+      "description": "Cuatro sesiones de medianoche con los grandes clásicos del género: Alien, El Exorcista, Psicosis y El Resplandor.",
+      "type": "CINEMA",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/terror/1200/675",
+      "startOffsetDays": -1,
+      "endOffsetDays": -1,
+      "doorsOpenOffsetDays": -1,
+      "minPriceCents": 850,
+      "categoryId": "cat-cine",
+      "venueId": "venue-cinesa",
+      "ticketTypes": [
+        {
+          "id": "tt-terror-sesion",
+          "name": "Sesión individual",
+          "description": null,
+          "priceCents": 850,
+          "currency": "EUR",
+          "quantityTotal": 600,
+          "maxPerOrder": 8,
+          "isActive": true
+        },
+        {
+          "id": "tt-terror-abono",
+          "name": "Abono 4 sesiones",
+          "description": null,
+          "priceCents": 2800,
+          "currency": "EUR",
+          "quantityTotal": 300,
+          "maxPerOrder": 4,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-pilar",
+      "title": "Torre del Pilar: Subida y vistas",
+      "slug": "torre-del-pilar-subida",
+      "description": "Sube a una de las torres de la Basílica del Pilar y contempla Zaragoza desde las alturas.",
+      "type": "OTHER",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/pilar/1200/675",
+      "startOffsetDays": 1,
+      "endOffsetDays": 1,
+      "doorsOpenOffsetDays": null,
+      "minPriceCents": 700,
+      "categoryId": "cat-rutas",
+      "venueId": "venue-pilar",
+      "ticketTypes": [
+        {
+          "id": "tt-pilar-general",
+          "name": "Entrada general",
+          "description": null,
+          "priceCents": 700,
+          "currency": "EUR",
+          "quantityTotal": 2000,
+          "maxPerOrder": 8,
+          "isActive": true
+        },
+        {
+          "id": "tt-pilar-elevador",
+          "name": "Acceso en ascensor panorámico",
+          "description": null,
+          "priceCents": 1200,
+          "currency": "EUR",
+          "quantityTotal": 1000,
+          "maxPerOrder": 8,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-reyleon",
+      "title": "El Rey León: El Musical",
+      "slug": "el-rey-leon-el-musical",
+      "description": "El musical de Disney con marionetas a tamaño real y la banda sonora original.",
+      "type": "THEATER",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/reyleon/1200/675",
+      "startOffsetDays": 1,
+      "endOffsetDays": 1,
+      "doorsOpenOffsetDays": 1,
+      "minPriceCents": 5500,
+      "categoryId": "cat-teatro",
+      "venueId": "venue-lope-de-vega",
+      "ticketTypes": [
+        {
+          "id": "tt-reyleon-anfiteatro",
+          "name": "Anfiteatro",
+          "description": null,
+          "priceCents": 5500,
+          "currency": "EUR",
+          "quantityTotal": 600,
+          "maxPerOrder": 6,
+          "isActive": true
+        },
+        {
+          "id": "tt-reyleon-platea",
+          "name": "Platea",
+          "description": null,
+          "priceCents": 9500,
+          "currency": "EUR",
+          "quantityTotal": 700,
+          "maxPerOrder": 6,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-prado",
+      "title": "El Bosco. V Centenario de la muerte del pintor",
+      "slug": "el-bosco-museo-del-prado",
+      "description": "La exposición más completa dedicada a El Bosco: 90 obras procedentes de los principales museos del mundo.",
+      "type": "MUSEUM",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/prado/1200/675",
+      "startOffsetDays": 2,
+      "endOffsetDays": 2,
+      "doorsOpenOffsetDays": 2,
+      "minPriceCents": 750,
+      "categoryId": "cat-museos",
+      "venueId": "venue-prado",
+      "ticketTypes": [
+        {
+          "id": "tt-prado-reducida",
+          "name": "Entrada reducida",
+          "description": "Estudiantes, +65 y desempleados",
+          "priceCents": 750,
+          "currency": "EUR",
+          "quantityTotal": 100,
+          "maxPerOrder": 8,
+          "isActive": true
+        },
+        {
+          "id": "tt-prado-general",
+          "name": "Entrada general",
+          "description": null,
+          "priceCents": 1500,
+          "currency": "EUR",
+          "quantityTotal": 400,
+          "maxPerOrder": 8,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-alhambra",
+      "title": "Alhambra: Visita nocturna",
+      "slug": "alhambra-visita-nocturna",
+      "description": "Recorrido nocturno por los Palacios Nazaríes con iluminación especial.",
+      "type": "OTHER",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/alhambra/1200/675",
+      "startOffsetDays": 3,
+      "endOffsetDays": 3,
+      "doorsOpenOffsetDays": null,
+      "minPriceCents": 1800,
+      "categoryId": "cat-rutas",
+      "venueId": "venue-alhambra",
+      "ticketTypes": [
+        {
+          "id": "tt-alhambra-nocturna",
+          "name": "Visita nocturna",
+          "description": null,
+          "priceCents": 1800,
+          "currency": "EUR",
+          "quantityTotal": 1500,
+          "maxPerOrder": 6,
+          "isActive": true
+        },
+        {
+          "id": "tt-alhambra-general",
+          "name": "Visita diurna (general)",
+          "description": null,
+          "priceCents": 1900,
+          "currency": "EUR",
+          "quantityTotal": 3000,
+          "maxPerOrder": 6,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-barca-atleti",
+      "title": "FC Barcelona vs Atlético de Madrid",
+      "slug": "fc-barcelona-atletico-de-madrid",
+      "description": "Partido de UEFA Champions League en el Spotify Camp Nou. ¡Entradas agotadas!",
+      "type": "FOOTBALL",
+      "status": "SOLD_OUT",
+      "imageUrl": "https://picsum.photos/seed/barca/1200/675",
+      "startOffsetDays": 4,
+      "endOffsetDays": 4,
+      "doorsOpenOffsetDays": 4,
+      "minPriceCents": 7000,
+      "categoryId": "cat-deportes",
+      "venueId": "venue-campnou",
+      "ticketTypes": [
+        {
+          "id": "tt-barca-gol",
+          "name": "Gol Norte",
+          "description": null,
+          "priceCents": 7000,
+          "currency": "EUR",
+          "quantityTotal": 45000,
+          "maxPerOrder": 4,
+          "isActive": true
+        },
+        {
+          "id": "tt-barca-lateral",
+          "name": "Tribuna Lateral",
+          "description": null,
+          "priceCents": 11000,
+          "currency": "EUR",
+          "quantityTotal": 45000,
+          "maxPerOrder": 4,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-reina-sofia",
+      "title": "Reina Sofía: Guernica y las vanguardias",
+      "slug": "reina-sofia-guernica-vanguardias",
+      "description": "Visita temática en torno al Guernica de Picasso y el contexto de las vanguardias históricas.",
+      "type": "MUSEUM",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/reinasofia/1200/675",
+      "startOffsetDays": 5,
+      "endOffsetDays": 5,
+      "doorsOpenOffsetDays": null,
+      "minPriceCents": 1200,
+      "categoryId": "cat-museos",
+      "venueId": "venue-reina-sofia",
+      "ticketTypes": [
+        {
+          "id": "tt-reina-general",
+          "name": "Entrada general",
+          "description": null,
+          "priceCents": 1200,
+          "currency": "EUR",
+          "quantityTotal": 1000,
+          "maxPerOrder": 8,
+          "isActive": true
+        },
+        {
+          "id": "tt-reina-tematica",
+          "name": "Visita temática",
+          "description": null,
+          "priceCents": 2000,
+          "currency": "EUR",
+          "quantityTotal": 250,
+          "maxPerOrder": 6,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-ghibli",
+      "title": "Maratón Studio Ghibli",
+      "slug": "maraton-studio-ghibli",
+      "description": "Maratón de una jornada con cuatro títulos de Studio Ghibli en versión original subtitulada.",
+      "type": "CINEMA",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/ghibli/1200/675",
+      "startOffsetDays": 6,
+      "endOffsetDays": 6,
+      "doorsOpenOffsetDays": null,
+      "minPriceCents": 800,
+      "categoryId": "cat-cine",
+      "venueId": "venue-kinepolis",
+      "ticketTypes": [
+        {
+          "id": "tt-ghibli-sesion",
+          "name": "Sesión individual",
+          "description": null,
+          "priceCents": 800,
+          "currency": "EUR",
+          "quantityTotal": 900,
+          "maxPerOrder": 8,
+          "isActive": true
+        },
+        {
+          "id": "tt-ghibli-maraton",
+          "name": "Maratón completo (4 películas)",
+          "description": null,
+          "priceCents": 2200,
+          "currency": "EUR",
+          "quantityTotal": 500,
+          "maxPerOrder": 6,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-clasico",
+      "title": "El Clásico: Real Madrid vs FC Barcelona",
+      "slug": "real-madrid-fc-barcelona",
+      "description": "Jornada 12 de LaLiga. Uno de los grandes partidos de la temporada se juega en el Bernabéu.",
+      "type": "FOOTBALL",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/clasico/1200/675",
+      "startOffsetDays": 7,
+      "endOffsetDays": 7,
+      "doorsOpenOffsetDays": 7,
+      "minPriceCents": 6500,
+      "categoryId": "cat-deportes",
+      "venueId": "venue-bernabeu",
+      "ticketTypes": [
+        {
+          "id": "tt-clasico-fondo",
+          "name": "Grada de Fondo",
+          "description": null,
+          "priceCents": 6500,
+          "currency": "EUR",
+          "quantityTotal": 30000,
+          "maxPerOrder": 4,
+          "isActive": true
+        },
+        {
+          "id": "tt-clasico-lateral",
+          "name": "Grada Lateral",
+          "description": null,
+          "priceCents": 11000,
+          "currency": "EUR",
+          "quantityTotal": 48000,
+          "maxPerOrder": 4,
+          "isActive": true
+        },
+        {
+          "id": "tt-clasico-vip",
+          "name": "Palco VIP",
+          "description": "Asiento premium + catering",
+          "priceCents": 26000,
+          "currency": "EUR",
+          "quantityTotal": 500,
+          "maxPerOrder": 2,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-alcazar",
+      "title": "Real Alcázar: Visita guiada",
+      "slug": "real-alcazar-visita-guiada",
+      "description": "Visita guiada por los Reales Alcázares de Sevilla, con acceso a los jardines.",
+      "type": "OTHER",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/alcazar/1200/675",
+      "startOffsetDays": 8,
+      "endOffsetDays": 8,
+      "doorsOpenOffsetDays": null,
+      "minPriceCents": 1400,
+      "categoryId": "cat-rutas",
+      "venueId": "venue-alcazar",
+      "ticketTypes": [
+        {
+          "id": "tt-alcazar-libre",
+          "name": "Entrada libre",
+          "description": null,
+          "priceCents": 1400,
+          "currency": "EUR",
+          "quantityTotal": 1200,
+          "maxPerOrder": 8,
+          "isActive": true
+        },
+        {
+          "id": "tt-alcazar-guiada",
+          "name": "Visita guiada",
+          "description": null,
+          "priceCents": 2200,
+          "currency": "EUR",
+          "quantityTotal": 800,
+          "maxPerOrder": 6,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-thyssen",
+      "title": "Colección Thyssen: Impresionismo y Vanguardia",
+      "slug": "coleccion-thyssen-impresionismo",
+      "description": "Un recorrido por el impresionismo y las primeras vanguardias con obras de Monet, Van Gogh y Kandinsky.",
+      "type": "MUSEUM",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/thyssen/1200/675",
+      "startOffsetDays": 9,
+      "endOffsetDays": 9,
+      "doorsOpenOffsetDays": null,
+      "minPriceCents": 1300,
+      "categoryId": "cat-museos",
+      "venueId": "venue-thyssen",
+      "ticketTypes": [
+        {
+          "id": "tt-thyssen-general",
+          "name": "Entrada general",
+          "description": null,
+          "priceCents": 1300,
+          "currency": "EUR",
+          "quantityTotal": 600,
+          "maxPerOrder": 8,
+          "isActive": true
+        },
+        {
+          "id": "tt-thyssen-guiada",
+          "name": "Visita guiada",
+          "description": "Con guía oficial, 60 min",
+          "priceCents": 2200,
+          "currency": "EUR",
+          "quantityTotal": 200,
+          "maxPerOrder": 6,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-cirque",
+      "title": "Cirque du Soleil: OVO",
+      "slug": "cirque-du-soleil-ovo",
+      "description": "Un ecosistema lleno de vida donde los insectos cobran protagonismo. ¡Últimas funciones agotadas!",
+      "type": "THEATER",
+      "status": "SOLD_OUT",
+      "imageUrl": "https://picsum.photos/seed/cirque/1200/675",
+      "startOffsetDays": 10,
+      "endOffsetDays": 10,
+      "doorsOpenOffsetDays": null,
+      "minPriceCents": 6500,
+      "categoryId": "cat-teatro",
+      "venueId": "venue-wizink",
+      "ticketTypes": [
+        {
+          "id": "tt-cirque-general",
+          "name": "Entrada general",
+          "description": null,
+          "priceCents": 6500,
+          "currency": "EUR",
+          "quantityTotal": 12000,
+          "maxPerOrder": 6,
+          "isActive": true
+        },
+        {
+          "id": "tt-cirque-premium",
+          "name": "Asiento Premium",
+          "description": null,
+          "priceCents": 11000,
+          "currency": "EUR",
+          "quantityTotal": 2000,
+          "maxPerOrder": 4,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-valencia-sevilla",
+      "title": "Valencia CF vs Sevilla FC",
+      "slug": "valencia-cf-sevilla-fc",
+      "description": "Partido de LaLiga en el histórico Estadio de Mestalla.",
+      "type": "FOOTBALL",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/mestalla/1200/675",
+      "startOffsetDays": 11,
+      "endOffsetDays": 11,
+      "doorsOpenOffsetDays": 11,
+      "minPriceCents": 3500,
+      "categoryId": "cat-deportes",
+      "venueId": "venue-mestalla",
+      "ticketTypes": [
+        {
+          "id": "tt-mestalla-general",
+          "name": "Grada General",
+          "description": null,
+          "priceCents": 3500,
+          "currency": "EUR",
+          "quantityTotal": 20000,
+          "maxPerOrder": 6,
+          "isActive": true
+        },
+        {
+          "id": "tt-mestalla-preferente",
+          "name": "Grada Preferente",
+          "description": null,
+          "priceCents": 5500,
+          "currency": "EUR",
+          "quantityTotal": 10000,
+          "maxPerOrder": 4,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-tapas",
+      "title": "Ruta de Tapas por Madrid",
+      "slug": "ruta-de-tapas-madrid",
+      "description": "Recorrido gastronómico por 6 bares históricos del centro con degustación y guía.",
+      "type": "OTHER",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/tapas/1200/675",
+      "startOffsetDays": 12,
+      "endOffsetDays": 12,
+      "doorsOpenOffsetDays": null,
+      "minPriceCents": 3900,
+      "categoryId": "cat-parques",
+      "venueId": "venue-lope-de-vega",
+      "ticketTypes": [
+        {
+          "id": "tt-tapas-general",
+          "name": "Entrada general (6 tapas + bebida)",
+          "description": null,
+          "priceCents": 3900,
+          "currency": "EUR",
+          "quantityTotal": 400,
+          "maxPerOrder": 8,
+          "isActive": true
+        },
+        {
+          "id": "tt-tapas-grupo",
+          "name": "Pack grupo (4 personas)",
+          "description": null,
+          "priceCents": 14000,
+          "currency": "EUR",
+          "quantityTotal": 80,
+          "maxPerOrder": 2,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-guggenheim",
+      "title": "Guggenheim Bilbao: Arte del siglo XX",
+      "slug": "guggenheim-bilbao-arte-siglo-xx",
+      "description": "La colección permanente del museo con obras de Warhol, Rothko, Serra y Koons.",
+      "type": "MUSEUM",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/guggenheim/1200/675",
+      "startOffsetDays": 13,
+      "endOffsetDays": 13,
+      "doorsOpenOffsetDays": null,
+      "minPriceCents": 900,
+      "categoryId": "cat-museos",
+      "venueId": "venue-guggenheim",
+      "ticketTypes": [
+        {
+          "id": "tt-guggenheim-estudiante",
+          "name": "Entrada estudiante",
+          "description": null,
+          "priceCents": 900,
+          "currency": "EUR",
+          "quantityTotal": 500,
+          "maxPerOrder": 8,
+          "isActive": true
+        },
+        {
+          "id": "tt-guggenheim-general",
+          "name": "Entrada general",
+          "description": null,
+          "priceCents": 1800,
+          "currency": "EUR",
+          "quantityTotal": 1500,
+          "maxPerOrder": 8,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-aitana",
+      "title": "Aitana: Alpha Tour",
+      "slug": "aitana-alpha-tour",
+      "description": "Gira de presentación de su nuevo álbum con producción escénica a gran escala.",
+      "type": "CONCERT",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/aitana/1200/675",
+      "startOffsetDays": 15,
+      "endOffsetDays": 15,
+      "doorsOpenOffsetDays": 15,
+      "minPriceCents": 4500,
+      "categoryId": "cat-conciertos",
+      "venueId": "venue-wizink",
+      "ticketTypes": [
+        {
+          "id": "tt-aitana-general",
+          "name": "Entrada general",
+          "description": null,
+          "priceCents": 4500,
+          "currency": "EUR",
+          "quantityTotal": 7000,
+          "maxPerOrder": 6,
+          "isActive": true
+        },
+        {
+          "id": "tt-aitana-track",
+          "name": "Pista VIP",
+          "description": null,
+          "priceCents": 9500,
+          "currency": "EUR",
+          "quantityTotal": 2000,
+          "maxPerOrder": 4,
+          "isActive": true
+        },
+        {
+          "id": "tt-aitana-meet",
+          "name": "Experience + Meet & Greet",
+          "description": null,
+          "priceCents": 20000,
+          "currency": "EUR",
+          "quantityTotal": 300,
+          "maxPerOrder": 2,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-cac-malaga",
+      "title": "CAC Málaga: Arte Contemporáneo y Nuevos Medios",
+      "slug": "cac-malaga-arte-contemporaneo",
+      "description": "Exposición colectiva de videoarte, instalaciones y fotografía contemporánea.",
+      "type": "MUSEUM",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/cacmalaga/1200/675",
+      "startOffsetDays": 16,
+      "endOffsetDays": 16,
+      "doorsOpenOffsetDays": null,
+      "minPriceCents": 900,
+      "categoryId": "cat-museos",
+      "venueId": "venue-cac-malaga",
+      "ticketTypes": [
+        {
+          "id": "tt-cac-general",
+          "name": "Entrada general",
+          "description": null,
+          "priceCents": 900,
+          "currency": "EUR",
+          "quantityTotal": 800,
+          "maxPerOrder": 10,
+          "isActive": true
+        },
+        {
+          "id": "tt-cac-abono",
+          "name": "Abono temporada",
+          "description": null,
+          "priceCents": 2400,
+          "currency": "EUR",
+          "quantityTotal": 300,
+          "maxPerOrder": 4,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-athletic-sociedad",
+      "title": "Athletic Club vs Real Sociedad",
+      "slug": "athletic-club-real-sociedad",
+      "description": "El derbi vasco se juega en San Mamés, un duelo de máxima rivalidad.",
+      "type": "FOOTBALL",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/sanmames/1200/675",
+      "startOffsetDays": 18,
+      "endOffsetDays": 18,
+      "doorsOpenOffsetDays": 18,
+      "minPriceCents": 4200,
+      "categoryId": "cat-deportes",
+      "venueId": "venue-san-mames",
+      "ticketTypes": [
+        {
+          "id": "tt-sanmames-general",
+          "name": "Grada General",
+          "description": null,
+          "priceCents": 4200,
+          "currency": "EUR",
+          "quantityTotal": 40000,
+          "maxPerOrder": 6,
+          "isActive": true
+        },
+        {
+          "id": "tt-sanmames-premium",
+          "name": "Zona Premium",
+          "description": null,
+          "priceCents": 12500,
+          "currency": "EUR",
+          "quantityTotal": 2000,
+          "maxPerOrder": 2,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-blade-runner",
+      "title": "Estreno: Blade Runner 2099 (70mm)",
+      "slug": "estreno-blade-runner-2099",
+      "description": "Proyección en copia de 70 mm con coloquio posterior del equipo de producción.",
+      "type": "CINEMA",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/bladerunner/1200/675",
+      "startOffsetDays": 20,
+      "endOffsetDays": 20,
+      "doorsOpenOffsetDays": null,
+      "minPriceCents": 900,
+      "categoryId": "cat-cine",
+      "venueId": "venue-kinepolis",
+      "ticketTypes": [
+        {
+          "id": "tt-blade-general",
+          "name": "Sesión estándar",
+          "description": null,
+          "priceCents": 900,
+          "currency": "EUR",
+          "quantityTotal": 700,
+          "maxPerOrder": 8,
+          "isActive": true
+        },
+        {
+          "id": "tt-blade-70mm",
+          "name": "Proyección 70mm + coloquio",
+          "description": null,
+          "priceCents": 1500,
+          "currency": "EUR",
+          "quantityTotal": 300,
+          "maxPerOrder": 6,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-betis-sevilla",
+      "title": "Derbi: Real Betis vs Sevilla FC",
+      "slug": "derbi-betis-sevilla",
+      "description": "El Gran Derbi de la ciudad de Sevilla en el Benito Villamarín.",
+      "type": "FOOTBALL",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/derbi/1200/675",
+      "startOffsetDays": 22,
+      "endOffsetDays": 22,
+      "doorsOpenOffsetDays": 22,
+      "minPriceCents": 5000,
+      "categoryId": "cat-deportes",
+      "venueId": "venue-villamarin",
+      "ticketTypes": [
+        {
+          "id": "tt-derbi-general",
+          "name": "Grada General",
+          "description": null,
+          "priceCents": 5000,
+          "currency": "EUR",
+          "quantityTotal": 30000,
+          "maxPerOrder": 4,
+          "isActive": true
+        },
+        {
+          "id": "tt-derbi-preferencia",
+          "name": "Preferencia",
+          "description": null,
+          "priceCents": 8500,
+          "currency": "EUR",
+          "quantityTotal": 8000,
+          "maxPerOrder": 4,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-cancelled",
+      "title": "Concierto cancelado (CANCELLED)",
+      "slug": "concierto-cancelado-2026",
+      "description": "Este evento está CANCELLED y no debe aparecer en el catálogo público.",
+      "type": "CONCERT",
+      "status": "CANCELLED",
+      "imageUrl": "https://picsum.photos/seed/cancelled/1200/675",
+      "startOffsetDays": 23,
+      "endOffsetDays": 23,
+      "doorsOpenOffsetDays": null,
+      "minPriceCents": 3000,
+      "categoryId": "cat-conciertos",
+      "venueId": "venue-wizink",
+      "ticketTypes": [
+        {
+          "id": "tt-cancelled-general",
+          "name": "Entrada general",
+          "description": null,
+          "priceCents": 3000,
+          "currency": "EUR",
+          "quantityTotal": 500,
+          "maxPerOrder": 4,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-boheme",
+      "title": "Ópera: La Bohème (Puccini)",
+      "slug": "la-boheme-gran-teatre-del-liceu",
+      "description": "La obra maestra de Puccini con orquesta y coro del Gran Teatre del Liceu.",
+      "type": "THEATER",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/boheme/1200/675",
+      "startOffsetDays": 25,
+      "endOffsetDays": 25,
+      "doorsOpenOffsetDays": 25,
+      "minPriceCents": 2500,
+      "categoryId": "cat-teatro",
+      "venueId": "venue-liceu",
+      "ticketTypes": [
+        {
+          "id": "tt-boheme-paraiso",
+          "name": "Paraíso",
+          "description": null,
+          "priceCents": 2500,
+          "currency": "EUR",
+          "quantityTotal": 800,
+          "maxPerOrder": 6,
+          "isActive": true
+        },
+        {
+          "id": "tt-boheme-buttaca",
+          "name": "Butaca",
+          "description": null,
+          "priceCents": 8500,
+          "currency": "EUR",
+          "quantityTotal": 900,
+          "maxPerOrder": 6,
+          "isActive": true
+        },
+        {
+          "id": "tt-boheme-palco",
+          "name": "Palco",
+          "description": null,
+          "priceCents": 16000,
+          "currency": "EUR",
+          "quantityTotal": 300,
+          "maxPerOrder": 4,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-coldplay",
+      "title": "Coldplay: Music of the Spheres World Tour",
+      "slug": "coldplay-music-of-the-spheres",
+      "description": "La banda británica regresa a Barcelona con su espectáculo sostenible y lleno de hits.",
+      "type": "CONCERT",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/coldplay/1200/675",
+      "startOffsetDays": 25,
+      "endOffsetDays": 25,
+      "doorsOpenOffsetDays": 25,
+      "minPriceCents": 7000,
+      "categoryId": "cat-conciertos",
+      "venueId": "venue-estadi-olimpic",
+      "ticketTypes": [
+        {
+          "id": "tt-coldplay-pista",
+          "name": "Pista (de pie)",
+          "description": null,
+          "priceCents": 7000,
+          "currency": "EUR",
+          "quantityTotal": 10000,
+          "maxPerOrder": 4,
+          "isActive": true
+        },
+        {
+          "id": "tt-coldplay-grada",
+          "name": "Grada",
+          "description": null,
+          "priceCents": 8500,
+          "currency": "EUR",
+          "quantityTotal": 40000,
+          "maxPerOrder": 4,
+          "isActive": true
+        },
+        {
+          "id": "tt-coldplay-vip",
+          "name": "Pack VIP Experience",
+          "description": null,
+          "priceCents": 22000,
+          "currency": "EUR",
+          "quantityTotal": 800,
+          "maxPerOrder": 2,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-malaga-zaragoza",
+      "title": "Málaga CF vs Real Zaragoza",
+      "slug": "malaga-cf-real-zaragoza",
+      "description": "Partido de LaLiga Hypermotion en La Rosaleda.",
+      "type": "FOOTBALL",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/rosaleda/1200/675",
+      "startOffsetDays": 28,
+      "endOffsetDays": 28,
+      "doorsOpenOffsetDays": null,
+      "minPriceCents": 2500,
+      "categoryId": "cat-deportes",
+      "venueId": "venue-rosaleda",
+      "ticketTypes": [
+        {
+          "id": "tt-rosaleda-general",
+          "name": "Grada General",
+          "description": null,
+          "priceCents": 2500,
+          "currency": "EUR",
+          "quantityTotal": 18000,
+          "maxPerOrder": 8,
+          "isActive": true
+        },
+        {
+          "id": "tt-rosaleda-familiar",
+          "name": "Pack familiar",
+          "description": null,
+          "priceCents": 7000,
+          "currency": "EUR",
+          "quantityTotal": 1000,
+          "maxPerOrder": 2,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-billyelliot",
+      "title": "Billy Elliot: El Musical",
+      "slug": "billy-elliot-el-musical",
+      "description": "El aclamado musical con música de Elton John, en una producción totalmente nueva.",
+      "type": "THEATER",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/billyelliot/1200/675",
+      "startOffsetDays": 30,
+      "endOffsetDays": 30,
+      "doorsOpenOffsetDays": null,
+      "minPriceCents": 4800,
+      "categoryId": "cat-teatro",
+      "venueId": "venue-lope-de-vega",
+      "ticketTypes": [
+        {
+          "id": "tt-billy-anfiteatro",
+          "name": "Anfiteatro",
+          "description": null,
+          "priceCents": 4800,
+          "currency": "EUR",
+          "quantityTotal": 500,
+          "maxPerOrder": 6,
+          "isActive": true
+        },
+        {
+          "id": "tt-billy-platea",
+          "name": "Platea",
+          "description": null,
+          "priceCents": 8000,
+          "currency": "EUR",
+          "quantityTotal": 600,
+          "maxPerOrder": 6,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-primavera",
+      "title": "Primavera Sound Barcelona 2026",
+      "slug": "primavera-sound-2026",
+      "description": "El festival de referencia en el Mediterráneo: tres días y tres noches de música en el Parc del Fòrum.",
+      "type": "FESTIVAL",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/primavera/1200/675",
+      "startOffsetDays": 33,
+      "endOffsetDays": 35,
+      "doorsOpenOffsetDays": null,
+      "minPriceCents": 26000,
+      "categoryId": "cat-festivales",
+      "venueId": "venue-parc-forum",
+      "ticketTypes": [
+        {
+          "id": "tt-primavera-abono",
+          "name": "Abono 3 días",
+          "description": null,
+          "priceCents": 26000,
+          "currency": "EUR",
+          "quantityTotal": 55000,
+          "maxPerOrder": 6,
+          "isActive": true
+        },
+        {
+          "id": "tt-primavera-vip",
+          "name": "Abono VIP (acceso a zona premium)",
+          "description": null,
+          "priceCents": 48000,
+          "currency": "EUR",
+          "quantityTotal": 3000,
+          "maxPerOrder": 4,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-vetusta",
+      "title": "Vetusta Morla: Gira 2026",
+      "slug": "vetusta-morla-gira-2026",
+      "description": "La banda madrileña presenta su nuevo disco en un formato de sala con sonido envolvente.",
+      "type": "CONCERT",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/vetusta/1200/675",
+      "startOffsetDays": 37,
+      "endOffsetDays": 37,
+      "doorsOpenOffsetDays": 37,
+      "minPriceCents": 4200,
+      "categoryId": "cat-conciertos",
+      "venueId": "venue-movistar-arena",
+      "ticketTypes": [
+        {
+          "id": "tt-vetusta-general",
+          "name": "Entrada general",
+          "description": null,
+          "priceCents": 4200,
+          "currency": "EUR",
+          "quantityTotal": 9000,
+          "maxPerOrder": 6,
+          "isActive": true
+        },
+        {
+          "id": "tt-vetusta-butaca",
+          "name": "Butaca numerada",
+          "description": null,
+          "priceCents": 6200,
+          "currency": "EUR",
+          "quantityTotal": 2500,
+          "maxPerOrder": 4,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-mad-cool",
+      "title": "Mad Cool Festival 2026",
+      "slug": "mad-cool-festival-2026",
+      "description": "Tres días de música en vivo con los mejores artistas internacionales en el Recinto Mad Cool de Madrid.",
+      "type": "FESTIVAL",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/madcool/1200/675",
+      "startOffsetDays": 40,
+      "endOffsetDays": 42,
+      "doorsOpenOffsetDays": null,
+      "minPriceCents": 9900,
+      "categoryId": "cat-festivales",
+      "venueId": "venue-madcool",
+      "ticketTypes": [
+        {
+          "id": "tt-madcool-dia",
+          "name": "Entrada de día (1 día)",
+          "description": null,
+          "priceCents": 9900,
+          "currency": "EUR",
+          "quantityTotal": 8000,
+          "maxPerOrder": 6,
+          "isActive": true
+        },
+        {
+          "id": "tt-madcool-abono",
+          "name": "Abono 3 días (general)",
+          "description": null,
+          "priceCents": 24000,
+          "currency": "EUR",
+          "quantityTotal": 40000,
+          "maxPerOrder": 6,
+          "isActive": true
+        },
+        {
+          "id": "tt-madcool-vip",
+          "name": "Abono 3 días (VIP)",
+          "description": null,
+          "priceCents": 52000,
+          "currency": "EUR",
+          "quantityTotal": 2000,
+          "maxPerOrder": 4,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-rosalia",
+      "title": "Rosalía: MOTOMAMI World Tour",
+      "slug": "rosalia-motomami-world-tour",
+      "description": "Un directo rompedor con banda en vivo y una puesta en escena minimalista y electrónica.",
+      "type": "CONCERT",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/rosalia/1200/675",
+      "startOffsetDays": 45,
+      "endOffsetDays": 45,
+      "doorsOpenOffsetDays": 45,
+      "minPriceCents": 5500,
+      "categoryId": "cat-conciertos",
+      "venueId": "venue-wizink",
+      "ticketTypes": [
+        {
+          "id": "tt-rosalia-general",
+          "name": "Entrada general",
+          "description": null,
+          "priceCents": 5500,
+          "currency": "EUR",
+          "quantityTotal": 8000,
+          "maxPerOrder": 6,
+          "isActive": true
+        },
+        {
+          "id": "tt-rosalia-vip",
+          "name": "Pista Premium",
+          "description": null,
+          "priceCents": 12000,
+          "currency": "EUR",
+          "quantityTotal": 1500,
+          "maxPerOrder": 4,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-arenal",
+      "title": "Arenal Sound 2026",
+      "slug": "arenal-sound-2026",
+      "description": "Festival de música independiente y electrónica junto al mar en Burriana.",
+      "type": "FESTIVAL",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/arenal/1200/675",
+      "startOffsetDays": 55,
+      "endOffsetDays": 59,
+      "doorsOpenOffsetDays": null,
+      "minPriceCents": 7500,
+      "categoryId": "cat-festivales",
+      "venueId": "venue-arenal",
+      "ticketTypes": [
+        {
+          "id": "tt-arenal-abono",
+          "name": "Abono 5 días",
+          "description": null,
+          "priceCents": 7500,
+          "currency": "EUR",
+          "quantityTotal": 30000,
+          "maxPerOrder": 6,
+          "isActive": true
+        },
+        {
+          "id": "tt-arenal-camping",
+          "name": "Abono + camping",
+          "description": null,
+          "priceCents": 11000,
+          "currency": "EUR",
+          "quantityTotal": 8000,
+          "maxPerOrder": 4,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-fib",
+      "title": "FIB Benicàssim 2026",
+      "slug": "fib-benicassim-2026",
+      "description": "Cuatro días de indie, pop y electrónica en la costa de Castellón.",
+      "type": "FESTIVAL",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/fib/1200/675",
+      "startOffsetDays": 67,
+      "endOffsetDays": 70,
+      "doorsOpenOffsetDays": null,
+      "minPriceCents": 9000,
+      "categoryId": "cat-festivales",
+      "venueId": "venue-fib",
+      "ticketTypes": [
+        {
+          "id": "tt-fib-abono",
+          "name": "Abono 4 días",
+          "description": null,
+          "priceCents": 9000,
+          "currency": "EUR",
+          "quantityTotal": 25000,
+          "maxPerOrder": 6,
+          "isActive": true
+        },
+        {
+          "id": "tt-fib-vip",
+          "name": "Abono VIP",
+          "description": null,
+          "priceCents": 18000,
+          "currency": "EUR",
+          "quantityTotal": 1500,
+          "maxPerOrder": 4,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-badbunny",
+      "title": "Bad Bunny: Debí Tirar Más Fotos Tour",
+      "slug": "bad-bunny-debi-tirar-mas-fotos",
+      "description": "El artista latino más escuchado del mundo llega a Sevilla con su gira más ambiciosa.",
+      "type": "CONCERT",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/badbunny/1200/675",
+      "startOffsetDays": 73,
+      "endOffsetDays": 73,
+      "doorsOpenOffsetDays": null,
+      "minPriceCents": 8000,
+      "categoryId": "cat-conciertos",
+      "venueId": "venue-cartuja",
+      "ticketTypes": [
+        {
+          "id": "tt-badbunny-pista",
+          "name": "Pista",
+          "description": null,
+          "priceCents": 8000,
+          "currency": "EUR",
+          "quantityTotal": 10000,
+          "maxPerOrder": 4,
+          "isActive": true
+        },
+        {
+          "id": "tt-badbunny-grada",
+          "name": "Grada",
+          "description": null,
+          "priceCents": 9500,
+          "currency": "EUR",
+          "quantityTotal": 45000,
+          "maxPerOrder": 4,
+          "isActive": true
+        },
+        {
+          "id": "tt-badbunny-vip",
+          "name": "VIP Front Stage",
+          "description": null,
+          "priceCents": 25000,
+          "currency": "EUR",
+          "quantityTotal": 600,
+          "maxPerOrder": 2,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-karolg",
+      "title": "Karol G: Mañana Será Bonito Tour",
+      "slug": "karol-g-manana-sera-bonito",
+      "description": "Reggaetón y pop latino en un espectáculo con pantallas gigantes y efectos especiales.",
+      "type": "CONCERT",
+      "status": "PUBLISHED",
+      "imageUrl": "https://picsum.photos/seed/karolg/1200/675",
+      "startOffsetDays": 83,
+      "endOffsetDays": 83,
+      "doorsOpenOffsetDays": null,
+      "minPriceCents": 7500,
+      "categoryId": "cat-conciertos",
+      "venueId": "venue-cartuja",
+      "ticketTypes": [
+        {
+          "id": "tt-karolg-pista",
+          "name": "Pista",
+          "description": null,
+          "priceCents": 7500,
+          "currency": "EUR",
+          "quantityTotal": 9000,
+          "maxPerOrder": 4,
+          "isActive": true
+        },
+        {
+          "id": "tt-karolg-grada",
+          "name": "Grada",
+          "description": null,
+          "priceCents": 8800,
+          "currency": "EUR",
+          "quantityTotal": 40000,
+          "maxPerOrder": 4,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "evt-draft",
+      "title": "Borrador: evento aún no publicado",
+      "slug": "borrador-evento-privado",
+      "description": "Este evento está en estado DRAFT y no debe aparecer en el catálogo público.",
+      "type": "OTHER",
+      "status": "DRAFT",
+      "imageUrl": "https://picsum.photos/seed/draft/1200/675",
+      "startOffsetDays": 85,
+      "endOffsetDays": 85,
+      "doorsOpenOffsetDays": null,
+      "minPriceCents": 1000,
+      "categoryId": "cat-parques",
+      "venueId": "venue-ifema",
+      "ticketTypes": [
+        {
+          "id": "tt-draft-general",
+          "name": "Entrada general",
+          "description": null,
+          "priceCents": 1000,
+          "currency": "EUR",
+          "quantityTotal": 100,
+          "maxPerOrder": 4,
+          "isActive": true
+        }
+      ]
+    }
+  ]
+}

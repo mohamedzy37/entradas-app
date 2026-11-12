@@ -1,0 +1,27 @@
+# --- Secretos: NUNCA al repo (es publico) ---
+.env
+.env.*
+!.env.example
+
+# --- Python ---
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# --- Node / Vite ---
+node_modules/
+dist/
+.vite/
+*.tsbuildinfo
+
+# --- Logs y copias locales ---
+.logs/
+*.log
+.backup-antes-stateless/
+
+# --- Sistema / editores ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,9 @@
+node_modules
+dist
+.env
+.env.local
+*.log
+.vite
+
+# Copia de seguridad previa al cambio a sesion stateless
+.backup-antes-stateless/
