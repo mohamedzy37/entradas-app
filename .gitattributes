@@ -1,0 +1,13 @@
+# Normaliza finales de linea en el repo.
+* text=auto
+
+# Los scripts de shell y la config de los contenedores SIEMPRE con LF:
+# con CRLF fallan dentro de Linux ("/bin/sh^M: bad interpreter").
+*.sh            text eol=lf
+Dockerfile      text eol=lf
+*.conf          text eol=lf
+*.template      text eol=lf
+docker-compose.yml text eol=lf
+
+# Scripts de Windows con CRLF.
+*.ps1           text eol=crlf

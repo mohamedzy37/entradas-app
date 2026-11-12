@@ -8,6 +8,7 @@ Uso:
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 from pathlib import Path
 
@@ -72,6 +73,10 @@ def main() -> None:
     Base.metadata.create_all(bind=engine)
     apply_schema_updates(engine)
     print("Esquema creado/verificado.")
+
+    if os.environ.get("SEED_DEMO_DATA", "true").strip().lower() in {"0", "false", "no"}:
+        print("SEED_DEMO_DATA=false: no se cargan datos ni usuarios de demostracion.")
+        return
 
     with SessionLocal() as db:
         run_seed(db)

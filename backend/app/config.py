@@ -19,6 +19,10 @@ class Settings(BaseSettings):
     APP_VERSION: str = "2.0.0"
     ENVIRONMENT: str = "development"  # development | production
     PORT: int = Field(default=3000, ge=1, le=65535)
+    # Documentacion interactiva (/docs, /redoc, /openapi.json).
+    # Sin definir = automatico: activa en desarrollo, desactivada en produccion
+    # para no publicar el mapa completo de la API.
+    ENABLE_DOCS: bool | None = None
 
     # --- Base de datos ---
     DATABASE_URL: str = (
@@ -74,6 +78,12 @@ class Settings(BaseSettings):
     @property
     def cors_origins(self) -> list[str]:
         return [item.strip() for item in self.CORS_ORIGINS.split(",") if item.strip()]
+
+    @property
+    def docs_enabled(self) -> bool:
+        if self.ENABLE_DOCS is None:
+            return not self.is_production
+        return self.ENABLE_DOCS
 
     @property
     def cookie_secure(self) -> bool:

@@ -566,7 +566,7 @@ function EventForm({
     formEvent.preventDefault();
     setError(null);
     if (!title.trim() || !venueId || !startAt) {
-      setError('T&iacute;tulo, recinto y fecha de inicio son obligatorios.');
+      setError('Título, recinto y fecha de inicio son obligatorios.');
       return;
     }
     const payload: EventInput = {
@@ -597,7 +597,7 @@ function EventForm({
       </h2>
 
       <div className="mt-4 grid gap-4 sm:grid-cols-2">
-        <Field label="T&iacute;tulo" className="sm:col-span-2">
+        <Field label="Título" className="sm:col-span-2">
           <input
             value={title}
             onChange={(e) => setTitle(e.target.value)}
@@ -666,7 +666,7 @@ function EventForm({
           />
         </Field>
 
-        <Field label="Descripci&oacute;n" className="sm:col-span-2">
+        <Field label="Descripción" className="sm:col-span-2">
           <textarea
             value={description ?? ''}
             onChange={(e) => setDescription(e.target.value)}
@@ -887,10 +887,7 @@ function Field({
 }) {
   return (
     <label className={`block ${className}`}>
-      <span
-        className="mb-1 block text-xs font-semibold text-muted"
-        dangerouslySetInnerHTML={{ __html: label }}
-      />
+      <span className="mb-1 block text-xs font-semibold text-muted">{label}</span>
       {children}
     </label>
   );

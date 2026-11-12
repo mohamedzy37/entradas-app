@@ -39,9 +39,9 @@ app = FastAPI(
         "access token de vida corta en cabecera Bearer y refresh token JWT "
         "rotatorio en cookie HttpOnly. Roles: ADMIN, MANAGER y CLIENT."
     ),
-    docs_url="/docs",
-    redoc_url="/redoc",
-    openapi_url="/openapi.json",
+    docs_url="/docs" if settings.docs_enabled else None,
+    redoc_url="/redoc" if settings.docs_enabled else None,
+    openapi_url="/openapi.json" if settings.docs_enabled else None,
 )
 
 
@@ -244,7 +244,7 @@ def api_info() -> dict:
         "version": settings.APP_VERSION,
         "auth": "JWT stateless: access en Authorization: Bearer, refresh en cookie HttpOnly",
         "roles": ["ADMIN", "MANAGER", "CLIENT"],
-        "docs": "/docs",
+        "docs": "/docs" if settings.docs_enabled else None,
         "endpoints": {
             "auth": [
                 "POST /api/auth/register",
