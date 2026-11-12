@@ -73,6 +73,20 @@ class Settings(BaseSettings):
             raise ValueError("ENVIRONMENT debe ser development, test o production")
         return value
 
+    @field_validator("DATABASE_URL")
+    @classmethod
+    def _psycopg2_driver(cls, value: str) -> str:
+        """Fuerza el driver psycopg2 (el que esta en requirements.txt).
+
+        Plataformas como Render o Heroku dan la URL como `postgresql://...` o
+        `postgres://...` sin driver, y SQLAlchemy 2.1 usaria entonces psycopg 3.
+        """
+        value = value.strip()
+        for prefix in ("postgres://", "postgresql://"):
+            if value.startswith(prefix):
+                return "postgresql+psycopg2://" + value[len(prefix):]
+        return value
+
     @field_validator("JWT_SECRET", "JWT_REFRESH_SECRET")
     @classmethod
     def _strong_secret(cls, value: str) -> str:
