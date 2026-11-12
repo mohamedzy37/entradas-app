@@ -1,8 +1,17 @@
 import { useState, type FormEvent } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { ApiError } from '../api/client';
 import { useAuth } from '../auth/AuthContext';
+import { GoogleButton } from '../components/GoogleButton';
 import { AlertIcon, UserIcon } from '../components/Icons';
+
+/** Mensajes para los errores que devuelve el login con Google (?error=...). */
+const EXTERNAL_ERRORS: Record<string, string> = {
+  google: 'No se pudo iniciar sesión con Google. Inténtalo de nuevo.',
+  google_cancelado: 'Has cancelado el inicio de sesión con Google.',
+  google_email: 'Tu cuenta de Google no tiene el correo verificado.',
+  cuenta_desactivada: 'Esta cuenta está desactivada.',
+};
 
 interface LocationState {
   from?: { pathname: string; search?: string };
@@ -12,9 +21,13 @@ export function LoginPage() {
   const { login } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
+  const [params] = useSearchParams();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState<string | null>(null);
+  const externalError = params.get('error');
+  const [error, setError] = useState<string | null>(
+    externalError ? (EXTERNAL_ERRORS[externalError] ?? EXTERNAL_ERRORS.google) : null,
+  );
   const [submitting, setSubmitting] = useState(false);
 
   const from = (location.state as LocationState | null)?.from;
@@ -91,6 +104,8 @@ export function LoginPage() {
         >
           {submitting ? 'Entrando...' : 'Entrar'}
         </button>
+
+        <GoogleButton next={redirectTo} />
 
         <p className="mt-4 text-center text-sm text-muted">
           ¿No tienes cuenta?{' '}

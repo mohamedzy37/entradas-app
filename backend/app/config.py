@@ -53,6 +53,15 @@ class Settings(BaseSettings):
     REFRESH_COOKIE_PATH: str = "/api/auth"
     COOKIE_SECURE: bool | None = None
 
+    # --- Login con Google (OpenID Connect) ---
+    # Credenciales de un "ID de cliente de OAuth" (tipo aplicacion web) de
+    # Google Cloud. Si GOOGLE_CLIENT_ID esta vacio, el login con Google se
+    # desactiva. GOOGLE_REDIRECT_URI debe coincidir EXACTAMENTE con la URI
+    # autorizada en Google Cloud, p. ej. https://localhost/api/auth/google/callback
+    GOOGLE_CLIENT_ID: str = ""
+    GOOGLE_CLIENT_SECRET: str = ""
+    GOOGLE_REDIRECT_URI: str = ""
+
     # --- Limitacion de peticiones (auth) ---
     AUTH_RATE_LIMIT_PER_MINUTE: int = Field(default=20, ge=1, le=1000)
 
@@ -78,6 +87,12 @@ class Settings(BaseSettings):
     @property
     def cors_origins(self) -> list[str]:
         return [item.strip() for item in self.CORS_ORIGINS.split(",") if item.strip()]
+
+    @property
+    def google_enabled(self) -> bool:
+        return bool(
+            self.GOOGLE_CLIENT_ID and self.GOOGLE_CLIENT_SECRET and self.GOOGLE_REDIRECT_URI
+        )
 
     @property
     def docs_enabled(self) -> bool:

@@ -13,6 +13,7 @@ import {
   clearSession,
   ensureAccessToken,
   hasStoredSession,
+  markSessionHint,
   setSessionExpiredHandler,
 } from './tokenStore';
 
@@ -24,6 +25,11 @@ interface AuthContextValue {
   register: (payload: RegisterPayload) => Promise<void>;
   login: (payload: LoginPayload) => Promise<void>;
   logout: () => Promise<void>;
+  /**
+   * Completa un login externo (Google): el backend ya dejo la cookie del
+   * refresh; aqui se obtiene el access token y el usuario. true si hay sesion.
+   */
+  completeExternalLogin: () => Promise<boolean>;
   /** true si el usuario tiene uno de los roles indicados. */
   hasRole: (...roles: Role[]) => boolean;
 }
@@ -93,6 +99,21 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setUser(response.data.user);
   }, []);
 
+  const completeExternalLogin = useCallback(async () => {
+    markSessionHint();
+    const token = await ensureAccessToken({ force: true });
+    if (!token) return false;
+    try {
+      const response = await api.me();
+      setUser(response.data.user);
+      return true;
+    } catch {
+      clearSession();
+      setUser(null);
+      return false;
+    }
+  }, []);
+
   const logout = useCallback(async () => {
     try {
       await api.logout();
@@ -108,8 +129,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   );
 
   const value = useMemo<AuthContextValue>(
-    () => ({ user, loading, register, login, logout, hasRole }),
-    [user, loading, register, login, logout, hasRole],
+    () => ({ user, loading, register, login, logout, completeExternalLogin, hasRole }),
+    [user, loading, register, login, logout, completeExternalLogin, hasRole],
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

@@ -17,7 +17,7 @@ from ..config import settings
 from ..database import get_db
 from ..deps import get_current_user
 from ..errors import ApiError
-from ..models import User, UserRole
+from ..models import UNUSABLE_PASSWORD, User, UserRole
 from ..schemas import LoginInput, RegisterInput
 from ..security import (
     dummy_verify,
@@ -79,8 +79,9 @@ def login(
     db: Session = Depends(get_db),
 ) -> dict:
     user = db.scalar(select(User).where(User.email == str(payload.email)))
-    if user is None:
-        # Mismo coste temporal que una verificacion real (anti-enumeracion).
+    if user is None or user.password_hash == UNUSABLE_PASSWORD:
+        # Usuario inexistente o cuenta solo de Google (sin contrasena): mismo
+        # coste temporal que una verificacion real (anti-enumeracion).
         dummy_verify(payload.password)
         raise ApiError.unauthorized("Credenciales invalidas")
 

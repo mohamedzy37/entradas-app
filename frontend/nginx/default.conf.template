@@ -41,7 +41,13 @@ server {
     client_max_body_size 1m;
     root /usr/share/nginx/html;
 
-    # API: autenticacion con limite estricto de peticiones.
+    # Lista publica de proveedores de login: se consulta en cada visita al
+    # login/registro, asi que no cuenta para el limite de autenticacion.
+    location = /api/auth/providers {
+        include /etc/nginx/snippets/proxy.conf;
+    }
+
+    # API: autenticacion con limite estricto de peticiones (incluye Google).
     location /api/auth/ {
         limit_req zone=auth burst=10 nodelay;
         include /etc/nginx/snippets/proxy.conf;

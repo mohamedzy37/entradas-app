@@ -11,6 +11,8 @@ $envFile = Join-Path $root '.env'
 
 if ((Test-Path $envFile) -and -not $Force) {
     Write-Host ".env ya existe. Usa -Force para regenerarlo (cambia los secretos)." -ForegroundColor Yellow
+    Write-Host "OJO: con -Force cambia POSTGRES_PASSWORD y la BD existente dejara de aceptar" -ForegroundColor Yellow
+    Write-Host "la conexion; habria que borrar sus datos con: docker compose down -v" -ForegroundColor Yellow
     exit 0
 }
 
@@ -33,6 +35,10 @@ PUBLIC_ORIGIN=https://localhost
 HTTP_PORT=80
 HTTPS_PORT=443
 TLS_CN=localhost
+
+# Login con Google (opcional, ver README). Vacio = desactivado.
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
 
 SEED_DEMO_DATA=true
 "@

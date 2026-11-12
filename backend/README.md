@@ -111,6 +111,13 @@ No es una sesion: es **un unico entero por usuario**, no un registro por login.
   `HttpOnly` (el token no es accesible para robarlo), `token_version` y la
   vida absoluta de 7 dias.
 
+## Login con Google
+
+Implementado en `app/google_oauth.py` y `app/routers/google_auth.py` con
+OpenID Connect (Authorization Code + PKCE + `state` + `nonce`). La
+configuración, el diagrama del flujo y el análisis de amenazas están en el
+[README de la raíz](../README.md#login-con-google).
+
 ## Endpoints principales
 
 | Metodo | Ruta | Permiso |
@@ -121,6 +128,9 @@ No es una sesion: es **un unico entero por usuario**, no un registro por login.
 | POST | `/api/auth/logout` | publico (borra la cookie) |
 | POST | `/api/auth/logout-all` | autenticado |
 | GET | `/api/auth/me` | autenticado |
+| GET | `/api/auth/providers` | publico |
+| GET | `/api/auth/google/login` | publico (redirige a Google) |
+| GET | `/api/auth/google/callback` | publico (vuelta de Google) |
 | GET | `/api/categories` | publico |
 | GET | `/api/venues` | publico |
 | GET | `/api/events` | publico |

@@ -48,6 +48,11 @@ def sa_enum(enum_cls: type[enum.Enum], name: str) -> SAEnum:
     )
 
 
+# Marcador de "sin contrasena": no es un hash Argon2 valido, asi que
+# verify_password() siempre devuelve False y no se puede entrar con contrasena.
+UNUSABLE_PASSWORD = "!sin-contrasena"
+
+
 class UserRole(str, enum.Enum):
     ADMIN = "ADMIN"
     MANAGER = "MANAGER"
@@ -120,7 +125,13 @@ class User(Base, TimestampMixin):
     token_version: Mapped[int] = mapped_column(
         Integer, default=0, server_default="0", nullable=False
     )
+    # Identificador estable de la cuenta de Google ("sub" del ID token) si el
+    # usuario ha iniciado sesion con Google. Las cuentas creadas solo con
+    # Google no tienen contrasena utilizable (password_hash = UNUSABLE_PASSWORD).
+    google_sub: Mapped[str | None] = mapped_column(String(255))
     orders: Mapped[list["Order"]] = relationship(back_populates="user")
+
+    __table_args__ = (Index("uq_users_google_sub", "google_sub", unique=True),)
 
 
 class Category(Base, TimestampMixin):

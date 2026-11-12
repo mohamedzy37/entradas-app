@@ -43,6 +43,11 @@ services:
       JWT_SECRET: ${JWT_SECRET:?Falta JWT_SECRET en .env}
       JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET:?Falta JWT_REFRESH_SECRET en .env}
       SEED_DEMO_DATA: ${SEED_DEMO_DATA:-true}
+      # Login con Google (opcional: vacio = desactivado).
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET:-}
+      # Se deriva del origen publico; debe estar autorizada en Google Cloud.
+      GOOGLE_REDIRECT_URI: ${PUBLIC_ORIGIN:-https://localhost}/api/auth/google/callback
     networks:
       - db
       - web

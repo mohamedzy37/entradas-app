@@ -2,6 +2,7 @@ import { useState, type FormEvent } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ApiError } from '../api/client';
 import { useAuth } from '../auth/AuthContext';
+import { GoogleButton } from '../components/GoogleButton';
 import { AlertIcon, UserIcon } from '../components/Icons';
 
 interface LocationState {
@@ -148,6 +149,8 @@ export function RegisterPage() {
         >
           {submitting ? 'Creando cuenta...' : 'Crear cuenta'}
         </button>
+
+        <GoogleButton next={redirectTo} label="Registrarse con Google" />
 
         <p className="mt-4 text-center text-sm text-muted">
           ¿Ya tienes cuenta?{' '}

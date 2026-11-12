@@ -8,6 +8,7 @@ import { AdminPage } from './pages/AdminPage';
 import { CheckoutPage } from './pages/CheckoutPage';
 import { EventDetailPage } from './pages/EventDetailPage';
 import { EventsPage } from './pages/EventsPage';
+import { GoogleCallbackPage } from './pages/GoogleCallbackPage';
 import { HomePage } from './pages/HomePage';
 import { LoginPage } from './pages/LoginPage';
 import { NotFoundPage } from './pages/NotFoundPage';
@@ -34,6 +35,7 @@ export default function App() {
           <Route path="/eventos" element={<EventsPage />} />
           <Route path="/eventos/:slug" element={<EventDetailPage />} />
           <Route path="/acceder" element={<LoginPage />} />
+          <Route path="/acceder/google" element={<GoogleCallbackPage />} />
           <Route path="/registro" element={<RegisterPage />} />
           <Route
             path="/cuenta"

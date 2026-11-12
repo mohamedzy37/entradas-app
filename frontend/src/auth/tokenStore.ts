@@ -51,6 +51,11 @@ function setSessionHint(active: boolean): void {
   }
 }
 
+/** Marca que hay sesion tras un login externo (Google), que no pasa por setSession. */
+export function markSessionHint(): void {
+  setSessionHint(true);
+}
+
 /** true si probablemente hay una cookie de refresh (no se puede leer: es HttpOnly). */
 export function hasStoredSession(): boolean {
   try {

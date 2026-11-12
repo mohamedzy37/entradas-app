@@ -23,6 +23,7 @@ entradas-app/
 | Mínimo 3 roles | `ADMIN`, `MANAGER` (gestor) y `CLIENT`, comprobados en cada endpoint (`require_roles`). |
 | API REST con JWT | Access token JWT (15 min) en `Authorization: Bearer`. |
 | Refresco del JWT | Refresh token JWT (7 días, secreto distinto) en cookie `HttpOnly; Secure; SameSite=Strict; Path=/api/auth`, con rotación en cada uso y caducidad absoluta. |
+| Login con Google | OpenID Connect (Authorization Code + PKCE, `state` y `nonce`) gestionado por el backend. Tras verificar el ID token de Google se emite la misma sesión JWT stateless. Ver [Login con Google](#login-con-google). |
 
 Los detalles de diseño y seguridad están en [`backend/README.md`](backend/README.md).
 
@@ -81,6 +82,78 @@ Navegador ──HTTPS:443──▶ Nginx (frontend) ──┬── /           
 docker compose logs -f backend        # logs de la API
 docker compose down                   # parar (conserva los datos)
 docker compose down -v                # parar y BORRAR datos y certificado
+```
+
+## Login con Google
+
+Es opcional: si no hay credenciales, el botón "Continuar con Google" no aparece.
+
+### 1. Crear las credenciales en Google Cloud
+
+1. Entra en <https://console.cloud.google.com/> y crea un proyecto (por ejemplo, `entradas-app`).
+2. Ve a **APIs y servicios → Pantalla de consentimiento de OAuth** (o **Google Auth Platform**):
+   - Nombre de la aplicación: `EntradasYa`; correo de asistencia: el tuyo.
+   - Público: **Externo**. Mientras esté en modo **Prueba**, añade en "Usuarios de prueba" las cuentas de Google que vayan a entrar (la tuya y la del profesor).
+   - Permisos: basta con `openid`, `email` y `profile`, que no son sensibles.
+3. Ve a **Credenciales → Crear credenciales → ID de cliente de OAuth**:
+   - Tipo de aplicación: **Aplicación web**.
+   - **URI de redireccionamiento autorizados** (deben coincidir exactamente):
+     - `https://localhost/api/auth/google/callback` (Docker)
+     - `http://localhost:5173/api/auth/google/callback` (desarrollo con Vite)
+   - No hacen falta "Orígenes de JavaScript autorizados": el navegador no llama a Google desde JavaScript.
+4. Copia el **ID de cliente** y el **secreto del cliente**.
+
+### 2. Configurarlas
+
+En el `.env` de la raíz (Docker):
+
+```env
+GOOGLE_CLIENT_ID=1234567890-xxxxxxxx.apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET=GOCSPX-xxxxxxxxxxxxxxxx
+```
+
+y vuelve a crear el backend: `docker compose up -d backend`. La URI de
+redirección se deriva de `PUBLIC_ORIGIN`. En desarrollo, pon las mismas dos
+variables en `backend/.env` junto con `GOOGLE_REDIRECT_URI`.
+
+### Cómo funciona y por qué es seguro
+
+```
+Navegador          Nginx/API                               Google
+   │ clic "Continuar con Google"                              │
+   ├─▶ GET /api/auth/google/login ──┐                         │
+   │   cookie firmada {state, nonce, code_verifier} (10 min)  │
+   │◀─ 302 ─────────────────────────┘                         │
+   ├─▶ accounts.google.com ?code_challenge&state&nonce ──────▶│ el usuario inicia sesión
+   │◀─ 302 /api/auth/google/callback?code&state ◀─────────────┤
+   ├─▶ GET /callback: comprueba state ─▶ POST /token (code + verifier + secret)
+   │                                   ◀─ id_token (JWT RS256)
+   │   verifica firma (JWKS), iss, aud, exp, nonce, email_verified
+   │   busca o crea el usuario (rol CLIENT)
+   │◀─ 303 /acceder/google + cookie HttpOnly del refresh
+   ├─▶ POST /api/auth/refresh ─▶ access token (en memoria)
+```
+
+| Amenaza | Defensa |
+| --- | --- |
+| CSRF en el login (forzar a la víctima a entrar con la cuenta del atacante) | `state` aleatorio, comprobado contra la cookie firmada con comparación en tiempo constante. |
+| Robo del `code` en la redirección | **PKCE S256**: sin el `code_verifier`, que nunca sale del backend ni de la cookie HttpOnly, el `code` no sirve. Además, el canje exige el client secret. |
+| Reutilización de un ID token | `nonce` ligado a la cookie del intento. |
+| ID token falso o de otra aplicación | Firma RS256 verificada con las claves públicas de Google (JWKS), `aud` igual a nuestro client id, `iss` de Google y `exp`. Se rechazan `alg=none` y la confusión de algoritmos. |
+| Correo no verificado | Se exige `email_verified = true`. |
+| Redirección abierta con `?next=` | Solo se aceptan rutas relativas internas (`/...`, nunca `//` ni `https://`). |
+| Script de terceros en la web | No se carga ningún JavaScript de Google: la CSP sigue siendo `script-src 'self'`. |
+| Sesión en el servidor | Ninguna: el `state` viaja en una cookie firmada y la sesión final es el mismo JWT stateless. |
+
+Si una cuenta con contraseña tiene el mismo correo verificado, se vincula a
+Google (columna `google_sub`). Las cuentas creadas solo con Google no tienen
+contraseña y no se puede entrar en ellas con el formulario.
+
+Pruebas sin conexión (simulan a Google con claves RSA locales):
+
+```powershell
+cd backend
+.venv\Scripts\python.exe scripts\test_google_oauth.py
 ```
 
 ## Puesta en marcha (desarrollo)

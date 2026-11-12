@@ -27,7 +27,7 @@ from .config import settings
 from .database import Base, engine
 from .migrations import apply_schema_updates
 from .errors import ApiError
-from .routers import admin, auth, catalog, orders, tickets
+from .routers import admin, auth, catalog, google_auth, orders, tickets
 
 logger = logging.getLogger("entradas")
 
@@ -287,6 +287,7 @@ def api_info() -> dict:
 
 
 app.include_router(auth.router, prefix="/api")
+app.include_router(google_auth.router, prefix="/api")
 app.include_router(catalog.router, prefix="/api")
 app.include_router(orders.router, prefix="/api")
 app.include_router(tickets.router, prefix="/api")

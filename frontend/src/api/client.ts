@@ -197,6 +197,17 @@ export const api = {
 
   me: () => request<DataResponse<{ user: User }>>('/auth/me'),
 
+  /** Proveedores de login externos activos en el backend. */
+  authProviders: () =>
+    request<DataResponse<{ google: boolean }>>('/auth/providers', { anonymous: true }),
+
+  /**
+   * URL que inicia el login con Google. Es una navegacion completa (no fetch):
+   * el backend redirige a Google y, al volver, a /acceder/google.
+   */
+  googleLoginUrl: (next: string) =>
+    `${BASE_URL}/auth/google/login?next=${encodeURIComponent(next)}`,
+
   /** true si probablemente hay una sesion recuperable (cookie de refresh). */
   hasSession: () => hasStoredSession(),
 
