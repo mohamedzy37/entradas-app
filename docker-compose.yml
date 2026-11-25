@@ -72,6 +72,10 @@ services:
     environment:
       HTTPS_PORT: ${HTTPS_PORT:-443}
       TLS_CN: ${TLS_CN:-localhost}
+      # Limite anti fuerza bruta de /api/auth/ por IP.
+      AUTH_RATE_LIMIT: ${AUTH_RATE_LIMIT:-10r/m}
+      # Limite anti DoS de toda la API por IP.
+      API_RATE_LIMIT: ${API_RATE_LIMIT:-20r/s}
     volumes:
       # Certificado TLS. Vacio = se genera uno autofirmado al arrancar.
       - tls-certs:/etc/nginx/certs

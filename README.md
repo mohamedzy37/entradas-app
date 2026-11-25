@@ -234,7 +234,10 @@ Usuarios de demostración (creados por `init_db.py`):
 
 ## Pruebas
 
-Con la API en marcha:
+Pruebas funcionales (pytest) y de carga y estrés (Locust, 420 usuarios
+simultáneos): ver [`pruebas/README.md`](pruebas/README.md).
+
+Prueba de humo rápida, con la API en marcha:
 
 ```powershell
 cd backend

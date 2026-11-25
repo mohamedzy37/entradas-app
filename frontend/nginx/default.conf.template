@@ -1,9 +1,19 @@
 # Plantilla procesada con envsubst al arrancar (imagen oficial de Nginx).
-# Variables: ${HTTPS_PORT}. Las variables de Nginx ($host...) no se tocan.
+# Variables: ${HTTPS_PORT}, ${AUTH_RATE_LIMIT} (logins por IP, por defecto 10r/m)
+# y ${API_RATE_LIMIT} (peticiones a la API por IP, por defecto 20r/s).
+# Las variables de Nginx ($host...) no se tocan.
 
 # Limitacion de peticiones a los endpoints de autenticacion (fuerza bruta).
-limit_req_zone $binary_remote_addr zone=auth:10m rate=10r/m;
+limit_req_zone $binary_remote_addr zone=auth:10m rate=${AUTH_RATE_LIMIT};
 limit_req_status 429;
+
+# --- Proteccion frente a DoS/DDoS de capa 7 (por IP de origen) ---
+# Limite de peticiones a la API: un usuario real hace ~1 peticion cada pocos
+# segundos; un bot que inunda la API recibe 429 sin llegar al backend.
+limit_req_zone $binary_remote_addr zone=api:10m rate=${API_RATE_LIMIT};
+# Maximo de conexiones (y peticiones HTTP/2) simultaneas por IP.
+limit_conn_zone $binary_remote_addr zone=conexiones:10m;
+limit_conn_status 429;
 
 upstream api {
     server backend:3000;
@@ -15,6 +25,8 @@ server {
     listen 8080;
     server_name _;
     server_tokens off;
+    limit_conn conexiones 50;
+    client_header_timeout 10s;
 
     location / {
         return 301 https://$host:${HTTPS_PORT}$request_uri;
@@ -41,9 +53,19 @@ server {
     client_max_body_size 1m;
     root /usr/share/nginx/html;
 
+    # Anti-DoS: conexiones por IP y tiempos cortos frente a Slowloris
+    # (clientes que abren conexiones y envian la peticion muy despacio).
+    limit_conn conexiones 50;
+    client_header_timeout 10s;
+    client_body_timeout 10s;
+    send_timeout 10s;
+    keepalive_timeout 15s;
+    reset_timedout_connection on;
+
     # Lista publica de proveedores de login: se consulta en cada visita al
     # login/registro, asi que no cuenta para el limite de autenticacion.
     location = /api/auth/providers {
+        limit_req zone=api burst=40 nodelay;
         include /etc/nginx/snippets/proxy.conf;
     }
 
@@ -55,10 +77,12 @@ server {
 
     # Resto de la API.
     location /api/ {
+        limit_req zone=api burst=40 nodelay;
         include /etc/nginx/snippets/proxy.conf;
     }
 
     location = /health {
+        limit_req zone=api burst=40 nodelay;
         include /etc/nginx/snippets/proxy.conf;
     }
 

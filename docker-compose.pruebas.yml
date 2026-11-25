@@ -1,0 +1,26 @@
+# Solo para pruebas. Uso:
+#
+#   docker compose -f docker-compose.yml -f docker-compose.pruebas.yml up -d
+#
+# - Publica la API en 127.0.0.1:3000 (sin pasar por Nginx) para las pruebas de
+#   la API y de estres. Solo en 127.0.0.1: no es accesible desde la red.
+# - Sube el limite de login/registro de la propia API (AUTH_RATE_LIMIT_PER_MINUTE,
+#   20 por minuto e IP en produccion) por el mismo motivo: todas las peticiones
+#   de las pruebas y de Locust salen de la misma IP.
+# - Sube el limite de logins de Nginx de 10 a 120 por minuto, porque las pruebas
+#   con Selenium abren e inician sesion muchas veces seguidas desde la misma IP.
+#   La rafaga maxima (10) no cambia, asi que la prueba de fuerza bruta sigue
+#   recibiendo 429.
+#
+# Al terminar, vuelve al despliegue normal con:  docker compose up -d
+
+services:
+  backend:
+    ports:
+      - "127.0.0.1:3000:3000"
+    environment:
+      AUTH_RATE_LIMIT_PER_MINUTE: 1000
+
+  frontend:
+    environment:
+      AUTH_RATE_LIMIT: 120r/m

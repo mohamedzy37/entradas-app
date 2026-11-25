@@ -28,6 +28,8 @@ COPY --from=build /src/dist /usr/share/nginx/html
 
 # Valores por defecto (los sobrescribe docker-compose).
 ENV HTTPS_PORT=443 \
+    AUTH_RATE_LIMIT=10r/m \
+    API_RATE_LIMIT=20r/s \
     TLS_CN=localhost
 
 USER 101
