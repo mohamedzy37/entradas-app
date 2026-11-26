@@ -3,8 +3,8 @@
 **Asignatura:** Puesta en Producción Segura · 2026-27
 **Alumno:** Mohammed Ghayat Zayoun
 **Fecha de ejecución:** 25 y 26 de noviembre de 2026
-**Entorno:** despliegue local con Docker Compose (`docker-compose.yml` + `docker-compose.pruebas.yml`),
-Windows 11, Python 3.12, Firefox.
+**Entornos:** despliegue local con Docker Compose (`docker-compose.yml` + `docker-compose.pruebas.yml`),
+Windows 11, Python 3.12, Firefox; y despliegue de producción en Render (plan gratuito).
 
 Las pruebas y las instrucciones para repetirlas están en [`README.md`](README.md). Todas se
 lanzan desde la aplicación `ejecutar_pruebas.py`, que genera un informe HTML por ejecución
@@ -18,6 +18,7 @@ en `resultados/`.
 | Funcionales en el navegador (E2E) | pytest + Selenium (Firefox) | **29 / 29 superadas** |
 | Carga: 420 usuarios simultáneos | Locust | **0,01 % de errores**, p95 global de 78 ms |
 | Simulación de ataque DoS de capa 7 | Locust | **98 % del ataque bloqueado**, backend sin fallos |
+| Carga en producción (Render, hasta 50 usuarios) | Locust | **0 errores**, pero p95 de 9,1 s |
 
 ## 2. Pruebas funcionales de la API (91 casos)
 
@@ -114,3 +115,36 @@ ellos por la CPU; el backend solo recibe 20 peticiones por segundo.
 límites de tamaño) frenan una inundación desde un origen y mantienen el servicio disponible.
 Un DDoS distribuido o volumétrico real necesita además una protección de red delante
 (CDN o servicio anti-DDoS), como se explica en el `README.md`.
+
+## 6. Prueba de carga en producción: Render (plan gratuito)
+
+Perfil `produccion`: escalones de 10, 25 y 50 usuarios de 1 minuto cada uno, con el mismo
+comportamiento que la prueba local, contra `https://entradas-api-mohamedzy37.onrender.com`.
+
+| Métrica | Producción (Render, 50 usuarios) | Local (420 usuarios) |
+| --- | --- | --- |
+| Peticiones | 459 (2,5 por segundo) | 16.263 (39 por segundo) |
+| Errores | **0** | 1 (0,01 %) |
+| Mediana global | 300 ms | 14 ms |
+| p95 global | **9.100 ms** | 78 ms |
+| Máximo | 13.420 ms | 390 ms |
+| Mediana de registro / login | 7.300 / 2.300 ms | 110 / 99 ms |
+| Mediana de catálogo (portada / detalle) | 280 / 200 ms | 14 / 12 ms |
+| Mediana de pagar | 160 ms | 22 ms |
+
+Observaciones:
+
+- **No hubo ni un error**: la aplicación es correcta en producción, pero lenta bajo carga.
+- Los picos de tiempo de respuesta coinciden con la llegada de cada escalón de usuarios
+  (10 → 25 → 50), cuando los compradores nuevos se **registran**. El hash Argon2id (64 MiB,
+  3 iteraciones) es costoso a propósito, y con los **0,1 CPU y 512 MB** del plan gratuito cada
+  registro tarda varios segundos y retrasa al resto de peticiones, también las del catálogo.
+  Fuera de esos picos, la mediana se mantiene por debajo de 1 s.
+- Con 1/8 de los usuarios de la prueba local, producción es más de 100 veces más lenta en el
+  p95: el límite es la capacidad del plan, no la aplicación.
+
+**Conclusión:** el despliegue en Render es válido para la demostración, pero no para el
+escenario de 420 usuarios simultáneos. Coincide con el estudio de costes (escenario 4): para
+ese volumen hacen falta instancias de al menos 1 vCPU / 2 GB, varias réplicas y autoescalado
+(unos 250 $/mes en Render).
+
