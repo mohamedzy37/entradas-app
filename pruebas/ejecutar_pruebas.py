@@ -43,6 +43,7 @@ SUITES = {
 NAVEGADORES = ["firefox", "chrome", "edge"]
 RESULTADO_PRUEBA = re.compile(r"::\S+ (PASSED|FAILED|ERROR|SKIPPED|XFAIL|XPASS)\b")
 RENDER_API = "https://entradas-api-mohamedzy37.onrender.com"
+MAX_LINEAS = 3000
 
 # perfil: (descripcion, locustfile, url destino, argumentos extra)
 ESTRES = {
@@ -74,7 +75,7 @@ def comando_locust(perfil: str, config: dict[str, str]) -> tuple[list[str], Path
     base = RESULTADOS / f"{perfil}-{marca}"
     _, fichero, destino, extra = ESTRES[perfil]
     host = config.get(destino) or {
-        "API_URL": "http://localhost:3000",
+        "API_URL": "http://127.0.0.1:3000",
         "WEB_URL": "https://localhost",
         "RENDER_URL": RENDER_API,
     }[destino]
@@ -96,6 +97,8 @@ def entorno(config: dict[str, str]) -> dict[str, str]:
     env.update({k: v for k, v in config.items() if v != ""})
     env["PYTHONUTF8"] = "1"
     env["PYTHONIOENCODING"] = "utf-8"
+    # Certificado autofirmado de localhost: sin un aviso por cada peticion.
+    env["PYTHONWARNINGS"] = "ignore:Unverified HTTPS request"
     return env
 
 
@@ -133,7 +136,7 @@ def abrir_ventana() -> None:
 
     variables = {
         "WEB_URL": tk.StringVar(value=os.environ.get("WEB_URL", "https://localhost")),
-        "API_URL": tk.StringVar(value=os.environ.get("API_URL", "http://localhost:3000")),
+        "API_URL": tk.StringVar(value=os.environ.get("API_URL", "http://127.0.0.1:3000")),
         "NAVEGADOR": tk.StringVar(value=os.environ.get("NAVEGADOR", "firefox")),
         "RENDER_URL": tk.StringVar(value=os.environ.get("RENDER_URL", RENDER_API)),
     }
@@ -266,8 +269,9 @@ def abrir_ventana() -> None:
         threading.Thread(target=leer, daemon=True).start()
 
     def revisar_cola() -> None:
+        # Como mucho 500 lineas por ciclo, para que la ventana siga respondiendo.
         try:
-            while True:
+            for _ in range(500):
                 linea = lineas.get_nowait()
                 if linea is None:
                     terminar()
@@ -275,6 +279,12 @@ def abrir_ventana() -> None:
                 escribir(linea)
         except queue.Empty:
             pass
+        # Se conservan solo las ultimas lineas de la salida.
+        sobrantes = int(salida.index("end-1c").split(".")[0]) - MAX_LINEAS
+        if sobrantes > 0:
+            salida.configure(state="normal")
+            salida.delete("1.0", f"{sobrantes + 1}.0")
+            salida.configure(state="disabled")
         raiz.after(100, revisar_cola)
 
     def terminar() -> None:
@@ -286,7 +296,10 @@ def abrir_ventana() -> None:
         detener.configure(state="disabled")
         if estado["informe"] and Path(estado["informe"]).exists():
             abrir_informe.configure(state="normal")
-        if codigo == 0 and estado["ok"] == 0:
+        if estado["ok"] == 0 and estado["fallos"] == 0 and codigo in (0, 1):
+            # Locust: no hay pruebas que contar; devuelve 1 si hubo algun error.
+            texto = "✔ Prueba de estrés terminada. Abre el informe para ver tiempos y errores."
+        elif codigo == 0 and estado["ok"] == 0:
             texto = "✔ Prueba terminada. Abre el informe para ver los resultados."
         elif codigo == 0:
             texto = f"✔ Todas las pruebas han pasado ({estado['ok']})."

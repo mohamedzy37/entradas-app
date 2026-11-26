@@ -5,7 +5,7 @@
 * Atacante: bots que piden la API sin pausa, a traves de Nginx (-H). Las
   respuestas 429 se cuentan como "bloqueadas": es lo esperado.
 * Monitor (1 usuario): consulta /health directamente en la API
-  (API_URL, http://localhost:3000 con docker-compose.pruebas.yml) cada segundo,
+  (API_URL, http://127.0.0.1:3000 con docker-compose.pruebas.yml) cada segundo,
   para medir si el backend sigue respondiendo con normalidad mientras Nginx
   frena el ataque.
 
@@ -21,10 +21,13 @@ import logging
 import os
 from urllib.parse import urlparse
 
+import urllib3
 from locust import HttpUser, between, constant, events, task
 
-API_URL = os.environ.get("API_URL", "http://localhost:3000").rstrip("/")
+API_URL = os.environ.get("API_URL", "http://127.0.0.1:3000").rstrip("/")
 CONTADOR = {"total": 0, "bloqueadas": 0, "atendidas": 0, "errores": 0}
+# El certificado de localhost es autofirmado: no avisar en cada peticion.
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 log = logging.getLogger("entradas-ddos")
 
 

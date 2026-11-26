@@ -3,7 +3,7 @@
 Las pruebas son de caja negra: hablan con la API por HTTP, igual que el
 frontend. Variables de entorno:
 
-    API_URL    URL de la API (por defecto http://localhost:3000, la API del
+    API_URL    URL de la API (por defecto http://127.0.0.1:3000, la API del
                docker compose de pruebas, sin pasar por Nginx).
     WEB_URL    URL publica del despliegue (por defecto https://localhost).
                Solo la usan las pruebas de test_6_despliegue.py.
@@ -22,7 +22,7 @@ from datetime import datetime, timedelta, timezone
 
 import httpx
 
-API_URL = os.environ.get("API_URL", "http://localhost:3000").rstrip("/")
+API_URL = os.environ.get("API_URL", "http://127.0.0.1:3000").rstrip("/")
 WEB_URL = os.environ.get("WEB_URL", "https://localhost").rstrip("/")
 REFRESH_COOKIE = "refresh_token"
 

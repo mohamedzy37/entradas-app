@@ -34,6 +34,7 @@ from datetime import datetime, timedelta, timezone
 from urllib.parse import urlparse
 
 import requests
+import urllib3
 from locust import HttpUser, LoadTestShape, between, events, task
 
 ADMIN_EMAIL = os.environ.get("ADMIN_EMAIL", "admin@entradas.com")
@@ -46,6 +47,8 @@ TIPOS = ["MUSEUM", "FOOTBALL", "CINEMA", "FESTIVAL", "CONCERT", "THEATER"]
 BUSQUEDAS = ["madrid", "concierto", "museo", "festival", "real", "noche"]
 
 DATOS: dict = {"evento_id": None, "tipo_id": None, "slugs": []}
+# El certificado de localhost es autofirmado: no avisar en cada peticion.
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 log = logging.getLogger("entradas-estres")
 
 

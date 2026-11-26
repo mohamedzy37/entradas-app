@@ -1,5 +1,7 @@
 # Pruebas funcionales y de estrés de EntradasYa
 
+**Resultados de la última ejecución:** [RESULTADOS.md](RESULTADOS.md)
+
 | Tipo | Herramienta | Carpeta | Qué comprueba |
 | --- | --- | --- | --- |
 | Funcionales de la API | pytest + httpx | `funcionales/` | Que cada endpoint hace lo que debe y que la seguridad (JWT, roles, cookies, validación, despliegue) se cumple |
@@ -178,15 +180,15 @@ cd $env:USERPROFILE\entradas-app\pruebas
 
 # Carga: 420 usuarios simultáneos
 $env:PERFIL = "carga"
-.venv\Scripts\locust.exe -f estres\locustfile.py -H http://localhost:3000 --headless --html resultados\carga.html --csv resultados\carga
+.venv\Scripts\locust.exe -f estres\locustfile.py -H http://127.0.0.1:3000 --headless --html resultados\carga.html --csv resultados\carga
 
 # Pico: llegan 420 usuarios de golpe
 $env:PERFIL = "pico"
-.venv\Scripts\locust.exe -f estres\locustfile.py -H http://localhost:3000 --headless --html resultados\pico.html --csv resultados\pico
+.venv\Scripts\locust.exe -f estres\locustfile.py -H http://127.0.0.1:3000 --headless --html resultados\pico.html --csv resultados\pico
 
 # Estrés: subir hasta encontrar el límite
 $env:PERFIL = "estres"
-.venv\Scripts\locust.exe -f estres\locustfile.py -H http://localhost:3000 --headless --html resultados\estres.html --csv resultados\estres
+.venv\Scripts\locust.exe -f estres\locustfile.py -H http://127.0.0.1:3000 --headless --html resultados\estres.html --csv resultados\estres
 
 # Simulación DDoS contra Nginx (solo local)
 Remove-Item Env:PERFIL
@@ -236,7 +238,7 @@ Si la API estaba dormida, la primera petición tarda alrededor de un minuto.
 
 | Variable | Por defecto | Uso |
 | --- | --- | --- |
-| `API_URL` | `http://localhost:3000` | API a probar |
+| `API_URL` | `http://127.0.0.1:3000` | API a probar |
 | `WEB_URL` | `https://localhost` | Web pública (pruebas de despliegue) |
 | `VERIFY_TLS` | `false` en localhost | Verificar el certificado TLS |
 | `ADMIN_EMAIL`, `ADMIN_PASSWORD` | usuario de demo | Admin para crear los eventos de prueba |
